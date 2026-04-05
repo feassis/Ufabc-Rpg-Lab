@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileData
   Speed: 7
   Damage: 5
-  Lifetime: 6
+  Lifetime: 2
