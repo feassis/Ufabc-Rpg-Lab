@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private GameObject player; //This Will Get Player From the enemymaneger once implemented
+    private GameObject player; //This Will Get Player From the enemymaneger once implemented
     [SerializeField] private EnemyTriggerCollision collision;
     [SerializeField] private Transform body;
     [SerializeField] private Transform shadow;
@@ -12,12 +12,16 @@ public class EnemyController : MonoBehaviour
 
     [field: SerializeField] public EnemyData Data {  get; protected set; }
 
-    
+    public GameObject GetPlayer() => player;
+
     public Vector3 GetPlayerPos() => player.transform.position;
+
+    public bool IsTouchingPlayer() => isTouchingPlayer;
 
     protected bool isTouchingPlayer;
     protected virtual void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player"); // Not the most efficient way to get the player, but it works for now.
         collision.OnPlayerEntry += Collision_OnPlayerEntry;
         collision.OnPlayerExit += Collision_OnPlayerExit;
         bodyStartlocalPos = body.transform.localPosition;
