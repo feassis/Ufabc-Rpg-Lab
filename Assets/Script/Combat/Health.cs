@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
     public event Action<float, float> OnHealthChanged;
     public event Action<float> OnDamaged;
     public event Action<float> OnHealed;
-    public event Action OnDied;
+    public event Action<Health> OnDied;
 
     public float CurrentHealth => currentHealth;
     public float MaxHealth => maxHealth;
@@ -152,7 +152,7 @@ public class Health : MonoBehaviour
         }
 
         isDead = true;
-        OnDied?.Invoke();
+        OnDied?.Invoke(this);
 
         if (destroyOnDeath)
         {
