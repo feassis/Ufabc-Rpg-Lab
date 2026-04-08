@@ -53,13 +53,11 @@ public class PlayerInputHandler : MonoBehaviour
     {
         Vector3 mousePos = Mouse.current.position.ReadValue();
 
-        mousePos.z = Mathf.Abs(Camera.main.transform.position.z); // 👈 ESSENCIAL
+        mousePos.z = Mathf.Abs(Camera.main.transform.position.z);
 
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
         mousePos.z = 0f; // 2D → z = 0
-
-        Debug.Log($"Mouse Pos: {mousePos}");
 
         return mousePos;
     }
