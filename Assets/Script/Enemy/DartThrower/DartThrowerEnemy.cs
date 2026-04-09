@@ -75,24 +75,3 @@ public class DartThrowerEnemy : EnemyController
         dart.Initialize(direction, projectileData, gameObject);
     }
 }
-
-public class DartThrowingState : IState
-{
-    public EnemyController Owner { get; set; }
-
-    public void OnStateEnter()
-    {
-    }
-
-    public void OnStateExit()
-    {
-    }
-
-    public void Update()
-    {
-        if (Owner is DartThrowerEnemy dartThrower)
-        {
-            dartThrower.TryThrowDart();
-        }
-    }
-}

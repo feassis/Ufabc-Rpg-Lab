@@ -3,25 +3,28 @@ using UnityEngine.Rendering;
 
 public class EnemyController : MonoBehaviour
 {
-    private GameObject player; //This Will Get Player From the enemymaneger once implemented
+    private GameObject player; 
     [SerializeField] private EnemyTriggerCollision collision;
     [SerializeField] private Transform body;
     [SerializeField] private Transform shadow;
+    [SerializeField] private Rigidbody2D rb;
 
     private Vector3 bodyStartlocalPos;
 
     [field: SerializeField] public EnemyData Data {  get; protected set; }
 
     public GameObject GetPlayer() => player;
+    public GameObject SetPlayer(GameObject player) => this.player = player;
 
     public Vector3 GetPlayerPos() => player.transform.position;
+
+    public void SetVelocity(Vector3 velocity) => rb.linearVelocity = velocity; 
 
     public bool IsTouchingPlayer() => isTouchingPlayer;
 
     protected bool isTouchingPlayer;
     protected virtual void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player"); // Not the most efficient way to get the player, but it works for now.
         collision.OnPlayerEntry += Collision_OnPlayerEntry;
         collision.OnPlayerExit += Collision_OnPlayerExit;
         bodyStartlocalPos = body.transform.localPosition;

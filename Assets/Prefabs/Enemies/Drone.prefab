@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 8434205513745201625}
   - component: {fileID: 765934268702544562}
   - component: {fileID: 1986177903390052741}
+  - component: {fileID: 2983647912010024180}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Untagged
@@ -229,10 +230,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c9e87e6e401d145b648834adf525fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlyingDroneEnemy
-  player: {fileID: 0}
   collision: {fileID: 1986177903390052741}
   body: {fileID: 5989887221685554285}
   shadow: {fileID: 2143290970128748844}
+  rb: {fileID: 2983647912010024180}
   <Data>k__BackingField: {fileID: 11400000, guid: b0f690dfad63ae046951cc5995f23a2c, type: 2}
 --- !u!58 &765934268702544562
 CircleCollider2D:
@@ -282,6 +283,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f80742c2d0c0d47ad205ea5af86c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyTriggerCollision
+--- !u!50 &2983647912010024180
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4122462635758979592}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &8916573817485657331
 GameObject:
   m_ObjectHideFlags: 0

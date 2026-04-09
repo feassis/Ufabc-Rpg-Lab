@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fdb61c7b2ee38d43a4a2eaeb5391f7a, type: 3}
+  m_Name: Level 1
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  Scenary: {fileID: 9144739637230275065, guid: fb686743a63646f49a55269e2c484aa6, type: 3}
+  PlayerSpawnPoint:
+    X: 0
+    Y: 0
+    RandownRange: 0
+  EnemySpawnPoints:
+  - X: 15
+    Y: 15
+    RandownRange: 2
+  - X: -15
+    Y: 15
+    RandownRange: 2
+  - X: 15
+    Y: -15
+    RandownRange: 2
+  - X: -15
+    Y: -15
+    RandownRange: 2
+  Waves:
+  - StartUpTimer: 10
+    MinCoolDownBetweenEnemies: 2
+    MaxCoolDownBetweenEnemies: 5
+    FixedEnemies: []
+    PointsGoal: 3
+    EnemyOptions:
+    - Points: 1
+      Enemy: {fileID: -1984645112125697872, guid: 97f6605ff13b0df4492e043f51898dde, type: 3}
+    - Points: 1
+      Enemy: {fileID: 3469848046154557856, guid: 6d46e181a24554747aa873fa45375edc, type: 3}
+  - StartUpTimer: 10
+    MinCoolDownBetweenEnemies: 2
+    MaxCoolDownBetweenEnemies: 5
+    FixedEnemies: []
+    PointsGoal: 5
+    EnemyOptions:
+    - Points: 1
+      Enemy: {fileID: -1984645112125697872, guid: 97f6605ff13b0df4492e043f51898dde, type: 3}
+    - Points: 1
+      Enemy: {fileID: 3469848046154557856, guid: 6d46e181a24554747aa873fa45375edc, type: 3}
+  NextLevel: 
