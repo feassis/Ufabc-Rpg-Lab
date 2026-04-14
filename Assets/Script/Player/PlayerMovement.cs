@@ -12,6 +12,14 @@ public class PlayerMovement : MonoBehaviour
     private float dashTimer = 0;
     private float dashTimerCoolDown = 0;
 
+    enum MoveDirection
+    {
+        Up,
+        Down,
+        Left,
+        Right
+    }
+
     public void SetMoveInput( Vector2 moveInput)
     {
         this.moveInput = moveInput;
@@ -77,26 +85,39 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
+        var velocity = rb.linearVelocity;
         if (isDashing && dashTimer > 0)
         {
-            var velocity = lastDir * data.DashSpeed;
+            velocity = lastDir * data.DashSpeed;
             rb.linearVelocity = velocity;
         }
         else
         {
-            var velocity = moveInput.normalized * GetVelocity();
+            velocity = moveInput.normalized * GetVelocity();
 
             rb.linearVelocity = velocity;
         }       
+
+        if (velocity.x > 0)
+        {
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+        }
+
+        if (velocity.x < 0)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        
+        
     }
 
     private void Rotate()
     {
-        Vector3 direction = PlayerInputHandler.GetMousePosInWorld() - transform.position;
+        /*Vector3 direction = PlayerInputHandler.GetMousePosInWorld() - transform.position;
 
         float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        rb.SetRotation(targetAngle);
+        rb.SetRotation(targetAngle);*/
     }
 
     private float GetVelocity() => isSprinting ? data.SprintSpeed : data.Speed;
