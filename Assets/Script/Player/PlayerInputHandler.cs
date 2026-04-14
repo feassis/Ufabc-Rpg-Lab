@@ -10,6 +10,7 @@ public class PlayerInputHandler : MonoBehaviour
     public static Action<bool> OnSprintInput;
     public static Action OnDashInput;
     public static Action OnAttackInput;
+    public static Action OnSpecialInput;
 
     private void OnEnable()
     {
@@ -24,6 +25,12 @@ public class PlayerInputHandler : MonoBehaviour
         inputActions.Combat.Sprint.canceled += Sprint_canceled;
         inputActions.Combat.Dash.performed += Dash_performed;
         inputActions.Combat.Attack.performed += Attack_performed;
+        inputActions.Combat.Special.performed += Special_performed;
+    }
+
+    private void Special_performed(InputAction.CallbackContext obj)
+    {
+        OnSpecialInput?.Invoke();
     }
 
     private void Attack_performed(InputAction.CallbackContext obj)
@@ -82,6 +89,10 @@ public class PlayerInputHandler : MonoBehaviour
         inputActions.Combat.Move.canceled -= Move_Canceled;
         inputActions.Combat.Sprint.performed -= Sprint_performed;
         inputActions.Combat.Sprint.canceled -= Sprint_canceled;
+
+        inputActions.Combat.Dash.performed -= Dash_performed;
+        inputActions.Combat.Attack.performed -= Attack_performed;
+        inputActions.Combat.Special.performed -= Special_performed;
     }
 }
 

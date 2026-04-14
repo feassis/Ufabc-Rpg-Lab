@@ -54,9 +54,7 @@ public class DartProjectile : MonoBehaviour
             return;
         }
 
-        Health targetHealth = target.GetComponentInParent<Health>();
-
-        if (targetHealth != null)
+        if (target.TryGetComponent<Health>(out Health targetHealth))
         {
             targetHealth.TakeDamage(Mathf.Max(0f, data != null ? data.Damage : 0f));
         }

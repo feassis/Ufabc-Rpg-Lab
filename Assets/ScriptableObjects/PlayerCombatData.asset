@@ -15,3 +15,7 @@ MonoBehaviour:
   Damage: 20
   AttackDuration: 0.5
   AttackCoolDown: 2
+  SpecialCooldown: 10
+  SpecialDamage: 5
+  SpecialTickTimer: 0.2
+  SpecialDuration: 5

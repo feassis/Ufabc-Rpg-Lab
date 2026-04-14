@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private float dashTimer = 0;
     private float dashTimerCoolDown = 0;
 
+    public Vector2 GetMoveInput() => moveInput;
+
     enum MoveDirection
     {
         Up,
