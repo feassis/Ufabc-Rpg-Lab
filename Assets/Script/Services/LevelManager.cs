@@ -7,13 +7,14 @@ using System.Collections.Generic;
 using Random = UnityEngine.Random;
 using Unity.VisualScripting.Dependencies.NCalc;
 
-public class LevelManager : MonoBehaviour
+public partial class LevelManager : MonoBehaviour
 {
     [SerializeField] private LevelData Data;
     [SerializeField] private GameObject startWavesPanel;
     [SerializeField] private TextMeshProUGUI startWavesText;
     [SerializeField] private Transform enemyHolder;
     [SerializeField] private GameObject player;
+    [SerializeField] private List<SkillSetups> skillSetups;
 
     private int waveIndex = 0;
 
@@ -176,6 +177,15 @@ public class LevelManager : MonoBehaviour
         // will spawn player
 
         player.GetComponent<Health>().OnDied += Player_OnDied;
+
+        AddSkillToPlayer(SkillType.Boomereng);
+    }
+
+    public void AddSkillToPlayer(SkillType skillType)
+    {
+        var skill = skillSetups.Find(s => s.Type == skillType);
+
+        player.GetComponent<PlayerCombat>().AddSkill(skill);
     }
 
     private void Player_OnDied(Health obj)

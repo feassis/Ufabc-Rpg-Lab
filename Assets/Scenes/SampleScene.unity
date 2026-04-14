@@ -1407,6 +1407,9 @@ MonoBehaviour:
   startWavesText: {fileID: 1583653257}
   enemyHolder: {fileID: 283542003}
   player: {fileID: 1740739223}
+  skillSetups:
+  - Type: 1
+    Skill: {fileID: 5504550290684504655, guid: dbe97ebc2dec38e4b942069877d63b79, type: 3}
 --- !u!4 &1629722877
 Transform:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private PlayerCombatData data;
     [SerializeField] private PlayerTriggerColision enemyDetection;
     [SerializeField] private GameObject biteVisuals;
+   
+    private List<Skill> skills = new List<Skill>();
     private float attackTimer = 0;
     private float attackCooldownTimer = 0;
 
@@ -61,5 +64,19 @@ public class PlayerCombat : MonoBehaviour
         {
             attackCooldownTimer -= Time.deltaTime;
         }
+    }
+
+    public void AddSkill(SkillSetups skill)
+    {
+        var skillIns = Instantiate<Skill>(skill.Skill, transform);
+
+        skillIns.SetPlayerTransform(transform);
+        skillIns.OnEnemyHited += SkillIns_OnEnemyHited;
+        skills.Add(skillIns);
+    }
+
+    private void SkillIns_OnEnemyHited(EnemyController enemy)
+    {
+        enemy.GetComponent<Health>().TakeDamage(data.Damage);
     }
 }
