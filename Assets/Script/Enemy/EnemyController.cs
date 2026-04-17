@@ -11,10 +11,14 @@ public class EnemyController : MonoBehaviour
 
     private Vector3 bodyStartlocalPos;
 
+    public LevelManager levelManager {  get; private set; }
+
     [field: SerializeField] public EnemyData Data {  get; protected set; }
 
     public GameObject GetPlayer() => player;
     public GameObject SetPlayer(GameObject player) => this.player = player;
+
+    public void SetLevelManager(LevelManager levelManager) => this.levelManager = levelManager;
 
     public Vector3 GetPlayerPos() => player.transform.position;
 

@@ -34,7 +34,9 @@ MonoBehaviour:
   - StartUpTimer: 10
     MinCoolDownBetweenEnemies: 2
     MaxCoolDownBetweenEnemies: 5
-    FixedEnemies: []
+    FixedEnemies:
+    - SpawnTime: 5
+      Enemy: {fileID: 2366109830798637463, guid: d133cb9170b02ce46929baa92e4bf367, type: 3}
     PointsGoal: 3
     EnemyOptions:
     - Points: 1

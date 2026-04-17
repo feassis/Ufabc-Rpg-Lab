@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class DartThrowerEnemy : EnemyController
 {
-    [SerializeField] private DartProjectile dartPrefab;
-    [SerializeField] private ProjectileData projectileData;
-    [SerializeField] private Transform throwPoint;
+    [SerializeField] protected DartProjectile dartPrefab;
+    [SerializeField] protected ProjectileData projectileData;
+    [SerializeField] protected Transform throwPoint;
 
     private DartThrowerStateMachine stateMachine;
-    private float nextThrowTime;
+    protected float nextThrowTime;
 
     protected override void Awake()
     {
@@ -21,7 +21,7 @@ public class DartThrowerEnemy : EnemyController
         stateMachine.ChangeState(States.CHASING);
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         stateMachine.Update();
 
@@ -50,7 +50,7 @@ public class DartThrowerEnemy : EnemyController
         nextThrowTime = Time.time + Mathf.Max(0.01f, Data.AttackCooldown);
     }
 
-    private void ThrowDart()
+    protected void ThrowDart()
     {
         if (dartPrefab == null || projectileData == null)
         {
