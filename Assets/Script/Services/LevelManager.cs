@@ -114,7 +114,7 @@ public partial class LevelManager : MonoBehaviour
         onComplete?.Invoke();
     }
 
-    private void SpawnEnemy(EnemyController enemy, Vector3 SpawnPos)
+    public EnemyController SpawnEnemy(EnemyController enemy, Vector3 SpawnPos)
     {
         var spawnedEnemy = Instantiate<EnemyController>(enemy);
         spawnedEnemy.transform.position = SpawnPos;
@@ -122,10 +122,13 @@ public partial class LevelManager : MonoBehaviour
         spawnedEnemy.transform.SetParent(enemyHolder);
 
         spawnedEnemy.SetPlayer(player);
+        spawnedEnemy.SetLevelManager(this);
 
         spawnedEnemy.gameObject.GetComponent<Health>().OnDied += OnEnemyDied;
 
         enemies.Add(spawnedEnemy);
+
+        return spawnedEnemy;
     }
 
     private void OnEnemyDied(Health health)

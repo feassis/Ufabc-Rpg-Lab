@@ -122,13 +122,19 @@ public class PlayerCombat : MonoBehaviour
             {
                 if (lazerHit1.collider != null)
                 {
-                    lazerHit1.collider.gameObject.GetComponent<Health>().TakeDamage(data.SpecialDamage);
+                    if(lazerHit1.collider.gameObject.TryGetComponent<Health>(out Health health))
+                    {
+                        health.TakeDamage(data.SpecialDamage);
+                    }
                     specialTickTime = data.SpecialTickTimer;
                 }
 
                 if (lazerHit2.collider != null)
                 {
-                    lazerHit2.collider.gameObject.GetComponent<Health>().TakeDamage(data.SpecialDamage);
+                    if(lazerHit2.collider.gameObject.TryGetComponent<Health>(out Health health))
+                    {
+                        health.TakeDamage(data.SpecialDamage);
+                    }
                     specialTickTime = data.SpecialTickTimer;
                 }
             }

@@ -10,6 +10,8 @@ namespace StatePattern.StateMachine
         ATTACKING,
         TELEPORTING,
         CLONING,
-        DIVING
+        DIVING,
+        KEEPDISTANCE,
+        SPAWNMINION,
     }
 }

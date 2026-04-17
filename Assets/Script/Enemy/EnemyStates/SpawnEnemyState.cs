@@ -1,24 +1,24 @@
 using StatePattern.StateMachine;
-using System.Buffers;
 
-public class ChasingState : IState
+public class SpawnEnemyState : IState
 {
     public EnemyController Owner { get; set; }
 
     public void OnStateEnter()
     {
-        
+
     }
 
     public void OnStateExit()
     {
-        
+
     }
 
     public void Update()
     {
-        var dir = Owner.GetPlayerPos() - Owner.transform.position;
-
-        Owner.SetVelocity(dir.normalized * Owner.Data.Speed);
+        if(Owner is EnemyMinibossSpawnerController spawner)
+        {
+            spawner.TrySpawnEnemy();
+        }
     }
 }
