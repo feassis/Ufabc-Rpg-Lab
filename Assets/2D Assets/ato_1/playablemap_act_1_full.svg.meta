@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0da6f22526530f84dab5e6f6ad5ea939
+guid: e78e69c73917aeb4393e8385352862fd
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -8,7 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 12408, guid: 0000000000000000e000000000000000, type: 0}
-  svgType: 3
+  svgType: 0
   texturedSpriteMeshType: 0
   svgPixelsPerUnit: 100
   gradientResolution: 64
@@ -17,12 +17,12 @@ ScriptedImporter:
   generatePhysicsShape: 0
   viewportOptions: 0
   preserveViewport: 0
-  advancedMode: 0
-  tessellationMode: 1
+  advancedMode: 1
+  tessellationMode: 0
   predefinedResolutionIndex: 1
   targetResolution: 1080
   resolutionMultiplier: 1
-  stepDistance: 10
+  stepDistance: 2
   samplingStepDistance: 100
   maxCordDeviationEnabled: 0
   maxCordDeviation: 1
@@ -49,5 +49,5 @@ ScriptedImporter:
       y: 0
       width: 0
       height: 0
-    SpriteID: 
+    SpriteID: 4223ea5c65d53474996798bc619e7d7e
     PhysicsOutlines: []
