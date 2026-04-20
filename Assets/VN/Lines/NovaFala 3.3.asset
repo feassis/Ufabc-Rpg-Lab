@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d58c2e1a29f8dab44869ac6ca63ff6c0, type: 3}
-  m_Name: NovaFala 4
+  m_Name: NovaFala 3.3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
-  characterName: Cachorrinho
-  dialogueText: auauau (triste)
+  characterName: Dono cachorro
+  dialogueText: Vamo embora a a a
   characterDisplay:
   - portrait: {fileID: 21300000, guid: 6d3985b33735841468a35808f7453d7b, type: 3}
     position: 0
   - portrait: {fileID: 21300000, guid: 305fcb781e943c543bc72fc0919635ac, type: 3}
     position: 2
   backgroundSprite: {fileID: 21300000, guid: b7b0706cd9f5c2a4db148bafdb3632b1, type: 3}
-  audioClip: {fileID: 8300000, guid: 57b3ca68d6e1a7d4db0ebf26ffc8acea, type: 3}
+  audioClip: {fileID: 0}
   ehAnimacao: 0
-  finalDeAnimacao: 0
+  finalDeAnimacao: 1
   tempoExibicao: 0.2
