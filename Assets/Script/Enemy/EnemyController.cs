@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
+//classe base para o controlador dos inimigos
 public class EnemyController : MonoBehaviour
 {
-    private GameObject player; 
+    private GameObject player;
+    [Header("References")]
     [SerializeField] private EnemyTriggerCollision collision;
     [SerializeField] private Transform body;
     [SerializeField] private Transform shadow;
@@ -27,6 +29,8 @@ public class EnemyController : MonoBehaviour
     public bool IsTouchingPlayer() => isTouchingPlayer;
 
     protected bool isTouchingPlayer;
+
+    //se inscreve aos eventos de colisão com o player
     protected virtual void Awake()
     {
         collision.OnPlayerEntry += Collision_OnPlayerEntry;

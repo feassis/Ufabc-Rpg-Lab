@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Define o que é uma onda de inimigos
 [Serializable]
 public class Waves
 {

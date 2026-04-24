@@ -21,10 +21,12 @@ public class KeepDistanceState : IState
 
         var distance = Mathf.Abs(dir.magnitude);
 
+        //se afasta se estiver perto
         if(distance < Owner.Data.AttackRange)
         {
             Owner.SetVelocity(-dir.normalized * Owner.Data.Speed);
         }
+        //se aproxima se tiver longe
         else
         {
             Owner.SetVelocity(dir.normalized * Owner.Data.Speed);

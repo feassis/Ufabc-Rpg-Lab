@@ -2,6 +2,7 @@ using StatePattern.StateMachine;
 using System.Collections.Generic;
 using UnityEngine;
 
+//classe que controla o miniboss
 public class EnemyMinibossSpawnerController : DartThrowerEnemy
 {
     [SerializeField] private EnemyController enemyPrefab;
@@ -23,6 +24,7 @@ public class EnemyMinibossSpawnerController : DartThrowerEnemy
     {
         stateMachine.Update();
 
+        //se o timer do spawn estiver zerado muda para o estado de spawn
         if (Time.time > nextSpawnTime)
         {
             stateMachine.ChangeState(States.SPAWNMINION);
@@ -33,13 +35,14 @@ public class EnemyMinibossSpawnerController : DartThrowerEnemy
 
         bool inAttackRange = Vector3.Distance(GetPlayerPos(), transform.position) <= Data.AttackRange;
 
-
+        //se o inimigo estiver no range atira um dardo
         if (inAttackRange && stateMachine.currentState is not DartThrowingState && Time.time >= nextThrowTime)
         {
             stateMachine.ChangeState(States.SHOOTING);
             return;
         }
 
+        //se não estiver atirando muda para o estado de manter distancia
         else if (stateMachine.currentState is not KeepDistanceState && Time.time < nextThrowTime)
         {
             stateMachine.ChangeState(States.KEEPDISTANCE);
@@ -48,6 +51,7 @@ public class EnemyMinibossSpawnerController : DartThrowerEnemy
 
     }
 
+    //metodo que invoca o inimigo
     public void TrySpawnEnemy()
     {
         if(minions.Count > maxNumberOfEnemiesSpawned)
@@ -63,6 +67,7 @@ public class EnemyMinibossSpawnerController : DartThrowerEnemy
         stateMachine.ChangeState(States.KEEPDISTANCE);
     }
 
+    //detecta a morte de um minion
     private void OnMinionDied(Health health)
     {
         health.OnDied -= OnMinionDied;

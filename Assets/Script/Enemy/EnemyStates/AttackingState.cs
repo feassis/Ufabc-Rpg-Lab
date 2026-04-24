@@ -7,6 +7,7 @@ public class AttackingState : IState
     private float nextAttackTime;
     private Health targetHealth;
 
+    //na entrada do estado para o movimento do player
     public void OnStateEnter()
     {
         nextAttackTime = 0f;
@@ -31,6 +32,7 @@ public class AttackingState : IState
             return;
         }
 
+        //tenta pegar o componete de vida od player
         if (targetHealth == null)
         {
             GameObject player = Owner.GetPlayer();
@@ -45,6 +47,7 @@ public class AttackingState : IState
             return;
         }
 
+        //aplica o dano no player
         targetHealth.TakeDamage(Owner.Data.AttackDamage);
         nextAttackTime = Time.time + Mathf.Max(0.01f, Owner.Data.AttackCooldown);
     }

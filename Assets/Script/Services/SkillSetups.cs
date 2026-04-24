@@ -1,5 +1,6 @@
 using System;
 
+//Define a forma da configuração da habilidade
 [Serializable]
 public struct SkillSetups
 {

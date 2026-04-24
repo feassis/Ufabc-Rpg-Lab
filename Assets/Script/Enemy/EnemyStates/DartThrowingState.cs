@@ -16,6 +16,7 @@ public class DartThrowingState : IState
 
     public void Update()
     {
+        //tenta atirar os dados
         if (Owner is DartThrowerEnemy dartThrower)
         {
             dartThrower.TryThrowDart();

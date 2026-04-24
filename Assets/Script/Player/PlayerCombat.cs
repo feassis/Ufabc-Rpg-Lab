@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
 
+//classe de gerenciamento do combate do jogador
 public class PlayerCombat : MonoBehaviour
 {
     [SerializeField] private PlayerCombatData data;
@@ -33,6 +34,7 @@ public class PlayerCombat : MonoBehaviour
 
     public event Action<float> OnSpecialUpdate;
 
+    //se inscreve aos inputs de attack e special e configura o line renderes dos lazers do special
     private void Awake()
     {
         PlayerInputHandler.OnAttackInput += OnAttackInput;
@@ -42,12 +44,14 @@ public class PlayerCombat : MonoBehaviour
         lazer2.positionCount = 2;
     }
 
+    //se desincreve dos inputs de attack e special
     private void OnDestroy()
     {
         PlayerInputHandler.OnAttackInput -= OnAttackInput;
         PlayerInputHandler.OnSpecialInput -= OnSpecialInput;
     }
 
+    //metodo que inicia o special
     private void OnSpecialInput()
     {
         if(specialCooldownTimer <= 0)
@@ -59,6 +63,7 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
+    //metodo que inicia o attack
     private void OnAttackInput()
     {
         if( Mathf.Max(attackCooldownTimer, attackTimer) <= 0 )
@@ -70,9 +75,11 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
+    //gerencia os timers e executa dano nos inimigos e realiza o special
     private void Update()
     {
-        if( attackTimer > 0 )
+        //attack
+        if ( attackTimer > 0 )
         {
             attackTimer -= Time.deltaTime;
 
@@ -95,6 +102,7 @@ public class PlayerCombat : MonoBehaviour
             }
         }
 
+        //special
         if(specialTimer > 0)
         {
             specialTimer -= Time.deltaTime;
@@ -116,7 +124,6 @@ public class PlayerCombat : MonoBehaviour
                 lazerHit1 = CastRayToEnemy(leftLaser1.transform.position, lazer1);
                 lazerHit2 = CastRayToEnemy(leftLaser2.transform.position, lazer2);
             }
-
 
             if(specialTickTime <= 0)
             {
@@ -158,6 +165,7 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
+    //traça o raio do raio lazer para o inimigo
     private RaycastHit2D CastRayToEnemy(Vector3 initialPos, LineRenderer visuals)
     {
         Vector3 mouseWorld = PlayerInputHandler.GetMousePosInWorld();
@@ -188,6 +196,7 @@ public class PlayerCombat : MonoBehaviour
         return hit;
     }
 
+    //adiciona uma skill
     public void AddSkill(SkillSetups skill)
     {
         var skillIns = Instantiate<Skill>(skill.Skill, transform);

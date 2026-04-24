@@ -8,7 +8,7 @@ public class BoomerangSkill : Skill
     
     private float angle;
 
-
+    //rotaciona o boomerang a cada frame
     void Update()
     {
         angle += speed * Time.deltaTime;
