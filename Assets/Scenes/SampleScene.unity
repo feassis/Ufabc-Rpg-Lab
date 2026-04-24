@@ -1739,6 +1739,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1307267827}
     m_Modifications:
     - target: {fileID: -7871556540511652807, guid: 906f8709ae1bf6a4bb13188a9f8f2d2e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7871556540511652807, guid: 906f8709ae1bf6a4bb13188a9f8f2d2e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: b8207e48c4c8ddc4abe09809d8e904cf, type: 2}
@@ -2138,7 +2142,7 @@ TilemapRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -4996,6 +5000,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 885965253}
     m_Modifications:
+    - target: {fileID: -7871556540511652807, guid: cc539e659deb6864fa8265a58226a4f8, type: 3}
+      propertyPath: m_SortingOrder
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: -3888481672020999207, guid: cc539e659deb6864fa8265a58226a4f8, type: 3}
       propertyPath: m_Name
       value: mapa_ato_1_full
@@ -11199,6 +11207,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 965170759}
     m_Modifications:
+    - target: {fileID: -7871556540511652807, guid: 5bfbaf07fd02f8a409478b3213638d38, type: 3}
+      propertyPath: m_SortingOrder
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: -3888481672020999207, guid: 5bfbaf07fd02f8a409478b3213638d38, type: 3}
       propertyPath: m_Name
       value: playablemap_act_1_midWater
@@ -14522,11 +14534,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6887392176350859477, guid: 9e56a2b3d69926841af42d55ddca2c33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6887392176350859477, guid: 9e56a2b3d69926841af42d55ddca2c33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -23.8
       objectReference: {fileID: 0}
     - target: {fileID: 6887392176350859477, guid: 9e56a2b3d69926841af42d55ddca2c33, type: 3}
       propertyPath: m_LocalPosition.z
