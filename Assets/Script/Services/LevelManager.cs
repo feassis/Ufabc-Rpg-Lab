@@ -15,6 +15,7 @@ public partial class LevelManager : MonoBehaviour
     [SerializeField] private Transform enemyHolder;
     [SerializeField] private GameObject player;
     [SerializeField] private List<SkillSetups> skillSetups;
+    [SerializeField] private EndGamePopup endGamePopup;
 
     private int waveIndex = 0;
 
@@ -165,14 +166,8 @@ public partial class LevelManager : MonoBehaviour
 
     private void EndGame(bool victory)
     {
-        if (victory)
-        {
-            Debug.Log("End Game");
-        }
-        else
-        {
-            Debug.Log("Captured");
-        }
+        endGamePopup.gameObject.SetActive(true);
+        endGamePopup.Setup(victory);
     }
 
     private void InitializePlayer()
