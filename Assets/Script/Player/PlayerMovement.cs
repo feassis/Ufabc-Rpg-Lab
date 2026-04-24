@@ -1,7 +1,9 @@
 using UnityEngine;
 
+//classe que controla o movimento do jogador
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Referencias")]
     [SerializeField] private PlayerMovementData data;
     [SerializeField] private Rigidbody2D rb;
 
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         this.moveInput = moveInput;
     }
 
+    //se inscreve aos eventos o input handler
     private void Awake()
     {
         PlayerInputHandler.OnMoveInput += OnMoveInput;
@@ -34,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerInputHandler.OnDashInput += OnDashInput;
     }
 
+    //metodo chamado ao apertar o botão de dash
     private void OnDashInput()
     {
         if(Mathf.Max(dashTimer, dashTimerCoolDown) <= 0)
@@ -44,11 +48,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    //metodo chamado ao apertar o botão de sprint
     private void OnSprintInput(bool isSprinting)
     {
         this.isSprinting = isSprinting;
     }
 
+    //se remove aos eventos o input handler
     private void OnDestroy()
     {
         PlayerInputHandler.OnMoveInput -= OnMoveInput;
@@ -56,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerInputHandler.OnDashInput -= OnDashInput;
     }
 
+    //metodo chamado ao usar os movimentos de movimento
     private void OnMoveInput(Vector2 input)
     {
         moveInput = input;
@@ -67,32 +74,37 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+    //nesse update os timers são atualizados com o framerate 
     private void Update()
     {
-        if(dashTimer > 0)
+        if (dashTimer > 0)
         {
             dashTimer -= Time.deltaTime;
 
-            if(dashTimer <= 0)
+            if (dashTimer <= 0)
             {
                 isDashing = false;
             }
         }
 
-        if(dashTimerCoolDown  > 0)
+        if (dashTimerCoolDown > 0)
         {
             dashTimerCoolDown -= Time.deltaTime;
         }
     }
 
+    //metodo de movimentação do jogador
     private void Move()
     {
         var velocity = rb.linearVelocity;
+        //se esta durante o dash
         if (isDashing && dashTimer > 0)
         {
             velocity = lastDir * data.DashSpeed;
             rb.linearVelocity = velocity;
         }
+        // movimentação normal
         else
         {
             velocity = moveInput.normalized * GetVelocity();
@@ -100,11 +112,13 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = velocity;
         }       
 
+        //flip do sprite
         if (velocity.x > 0)
         {
             gameObject.transform.localScale = new Vector3(1, 1, 1);
         }
 
+        //flip do sprite
         if (velocity.x < 0)
         {
             gameObject.transform.localScale = new Vector3(-1, 1, 1);
@@ -115,11 +129,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Rotate()
     {
-        /*Vector3 direction = PlayerInputHandler.GetMousePosInWorld() - transform.position;
+        Vector3 direction = PlayerInputHandler.GetMousePosInWorld() - transform.position;
 
         float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        rb.SetRotation(targetAngle);*/
+        rb.SetRotation(targetAngle);
     }
 
     private float GetVelocity() => isSprinting ? data.SprintSpeed : data.Speed;
@@ -128,6 +142,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
 
-        Rotate();
+        //Rotate();
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+//classe de vida
 public class Health : MonoBehaviour
 {
     [Header("Health")]
@@ -50,6 +51,7 @@ public class Health : MonoBehaviour
         }
     }
 
+    //metodo para receber o dano
     public bool TakeDamage(float amount)
     {
         if (!canTakeDamage || isDead)
@@ -83,6 +85,7 @@ public class Health : MonoBehaviour
         return true;
     }
 
+    //metodo de cura
     public bool Heal(float amount)
     {
         if (isDead)
@@ -111,6 +114,7 @@ public class Health : MonoBehaviour
         return true;
     }
 
+    //muda a vida maxima
     public void SetMaxHealth(float newMaxHealth, bool fillCurrentHealth = true)
     {
         maxHealth = Mathf.Max(1f, newMaxHealth);
@@ -127,6 +131,7 @@ public class Health : MonoBehaviour
         canTakeDamage = value;
     }
 
+    //metodo que mata o individuo com vida
     public void Kill()
     {
         if (isDead)
@@ -144,6 +149,7 @@ public class Health : MonoBehaviour
         OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }
 
+    //faz o clean up da morte
     private void HandleDeath()
     {
         if (isDead)

@@ -1,6 +1,7 @@
 using StatePattern.StateMachine;
 using UnityEngine;
 
+//controller do inimigo ranged
 public class DartThrowerEnemy : EnemyController
 {
     [SerializeField] protected DartProjectile dartPrefab;
@@ -27,18 +28,21 @@ public class DartThrowerEnemy : EnemyController
 
         bool inAttackRange = Vector3.Distance(GetPlayerPos(), transform.position) <= Data.AttackRange;
 
+        //tenta atirar se o inimiigo estiver no range
         if (inAttackRange && stateMachine.currentState is not DartThrowingState)
         {
             stateMachine.ChangeState(States.SHOOTING);
             return;
         }
 
+        //caso fora do range de attack persegue o jogador
         if (!inAttackRange && stateMachine.currentState is DartThrowingState)
         {
             stateMachine.ChangeState(States.CHASING);
         }
     }
 
+    //tenta arremssar um projetil
     public void TryThrowDart()
     {
         if (Time.time < nextThrowTime)
@@ -50,6 +54,7 @@ public class DartThrowerEnemy : EnemyController
         nextThrowTime = Time.time + Mathf.Max(0.01f, Data.AttackCooldown);
     }
 
+    //metodo de atirar um dado
     protected void ThrowDart()
     {
         if (dartPrefab == null || projectileData == null)
@@ -71,6 +76,7 @@ public class DartThrowerEnemy : EnemyController
             return;
         }
 
+        //instancia o projetil
         DartProjectile dart = Object.Instantiate(dartPrefab, origin, Quaternion.identity);
         dart.Initialize(direction, projectileData, gameObject);
     }

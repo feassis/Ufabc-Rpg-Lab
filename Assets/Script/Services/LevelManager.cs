@@ -2,19 +2,25 @@ using System;
 using UnityEngine;
 using TMPro;
 using System.Collections;
-using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
-using Unity.VisualScripting.Dependencies.NCalc;
 
+//Classe que controla a Faze
 public partial class LevelManager : MonoBehaviour
 {
+    [Header("Configs")]
     [SerializeField] private LevelData Data;
+    [SerializeField] private Transform enemyHolder;
+    
+    [Header("Wave UI")]
     [SerializeField] private GameObject startWavesPanel;
     [SerializeField] private TextMeshProUGUI startWavesText;
-    [SerializeField] private Transform enemyHolder;
+
+    [Header("Player Configs")]
     [SerializeField] private GameObject player;
     [SerializeField] private List<SkillSetups> skillSetups;
+    
+    [Header("End GAme UI")]
     [SerializeField] private EndGamePopup endGamePopup;
 
     private int waveIndex = 0;
@@ -30,11 +36,13 @@ public partial class LevelManager : MonoBehaviour
         InitializeWave();
     }
 
+    //Inicializa uma das ondas de inimigos
     private void InitializeWave()
     {
         StartCoroutine(WaveStartUpSequence());
     }
 
+    //sequencia de setup da inicialização da onda de inimigos
     private IEnumerator WaveStartUpSequence()
     {
         fixedEnemiesSpawned = 0;
@@ -63,12 +71,14 @@ public partial class LevelManager : MonoBehaviour
         StartWaveSequence(wave);
     }
 
+    //sequencia da inicialização da onda de inimigos
     private void StartWaveSequence(Waves wave)
     {
         SpawnFixedEnemies(wave);
         StartCoroutine(SpawnRandomizedEnemies(wave));
     }
 
+    //spawna um inimigo aleatorio e adiciona sua pontuação no contador
     private IEnumerator SpawnRandomizedEnemies(Waves wave)
     {
         while (pointsSpawned < wave.PointsGoal)
@@ -86,6 +96,7 @@ public partial class LevelManager : MonoBehaviour
         }
     }
 
+    //spawna um inimigo fixo no tempo determinado
     private void SpawnFixedEnemies(Waves wave)
     {
         if(wave.FixedEnemies.Count == 0)
@@ -106,6 +117,7 @@ public partial class LevelManager : MonoBehaviour
         }
     }
 
+    //spawna o inimigo com um delay
     private IEnumerator SpawnEnemyWithDelay(float time, EnemyController enemy, Vector3 spawnPos, Action onComplete = null)
     {
         yield return new WaitForSeconds(time);
@@ -115,6 +127,7 @@ public partial class LevelManager : MonoBehaviour
         onComplete?.Invoke();
     }
 
+    //função que spawna o Inimigo e registra ele no level manager
     public EnemyController SpawnEnemy(EnemyController enemy, Vector3 SpawnPos)
     {
         var spawnedEnemy = Instantiate<EnemyController>(enemy);
@@ -132,6 +145,7 @@ public partial class LevelManager : MonoBehaviour
         return spawnedEnemy;
     }
 
+    //metodo chamado na morte do inimigo para chamar a verificar o estado da onda
     private void OnEnemyDied(Health health)
     {
         var deadEnemy = health.gameObject.GetComponent<EnemyController>();
@@ -141,6 +155,7 @@ public partial class LevelManager : MonoBehaviour
         CheckWaveState();
     }
 
+    //metodo para checar se a onda acabou
     private void CheckWaveState()
     {
         var wave = Data.Waves[waveIndex];
@@ -151,6 +166,7 @@ public partial class LevelManager : MonoBehaviour
         }
     }
 
+    //Manda para a proxima onda ou termina a fase
     private void ProcessEndOfWave()
     {
 
@@ -164,12 +180,14 @@ public partial class LevelManager : MonoBehaviour
         }
     }
 
+    //metodo para iniciar o loop de fim de fase
     private void EndGame(bool victory)
     {
         endGamePopup.gameObject.SetActive(true);
         endGamePopup.Setup(victory);
     }
 
+    //inicialisa o jogador
     private void InitializePlayer()
     {
         // will spawn player
@@ -179,6 +197,7 @@ public partial class LevelManager : MonoBehaviour
         AddSkillToPlayer(SkillType.Boomereng);
     }
 
+    //adiciona uma habilidade ao jogador
     public void AddSkillToPlayer(SkillType skillType)
     {
         var skill = skillSetups.Find(s => s.Type == skillType);
@@ -186,6 +205,7 @@ public partial class LevelManager : MonoBehaviour
         player.GetComponent<PlayerCombat>().AddSkill(skill);
     }
 
+    //metodo inscrito na morte do jogador
     private void Player_OnDied(Health obj)
     {
         EndGame(false);
