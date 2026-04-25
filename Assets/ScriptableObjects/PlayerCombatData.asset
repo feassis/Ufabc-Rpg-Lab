@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48a240d2d32e944e8a3acf0aaab032b, type: 3}
   m_Name: PlayerCombatData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCombatData
-  Damage: 20
+  Damage: 10
   AttackDuration: 0.5
-  AttackCoolDown: 2
+  AttackCoolDown: 4
   SpecialCooldown: 10
   SpecialDamage: 5
   SpecialTickTimer: 0.2

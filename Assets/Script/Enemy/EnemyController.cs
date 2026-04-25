@@ -10,6 +10,11 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Transform body;
     [SerializeField] private Transform shadow;
     [SerializeField] private Rigidbody2D rb;
+    [Header("Visuals")]
+    [SerializeField] private GameObject visuals;
+
+    private Vector3 visualsStartScale;
+    private Vector3 visualsStartEuler;
 
     private Vector3 bodyStartlocalPos;
 
@@ -30,12 +35,30 @@ public class EnemyController : MonoBehaviour
 
     protected bool isTouchingPlayer;
 
-    //se inscreve aos eventos de colisão com o player
+    //se inscreve aos eventos de colisï¿½o com o player
     protected virtual void Awake()
     {
         collision.OnPlayerEntry += Collision_OnPlayerEntry;
         collision.OnPlayerExit += Collision_OnPlayerExit;
         bodyStartlocalPos = body.transform.localPosition;
+        visualsStartScale = visuals != null ? visuals.transform.localScale : Vector3.one;
+        visualsStartEuler = visuals != null ? visuals.transform.localEulerAngles : Vector3.zero;
+    }
+
+    protected virtual void Update()
+    {
+        UpdateFacing();
+    }
+
+    private void UpdateFacing()
+    {
+        if (player == null || visuals == null) return;
+
+        float dir = player.transform.position.x - transform.position.x;
+        if (Mathf.Approximately(dir, 0f)) { Debug.Log("Player is directly in front of enemy."); return; }
+        float yAngle = dir < 0f ? 180f : 0f;
+
+        visuals.transform.localEulerAngles = new Vector3(visualsStartEuler.x, yAngle, visualsStartEuler.z);
     }
 
     public Vector3 GetBodyPos() => body.transform.position;

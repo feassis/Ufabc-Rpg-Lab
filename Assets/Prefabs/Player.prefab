@@ -281,6 +281,9 @@ GameObject:
   - component: {fileID: 1901520481068567955}
   - component: {fileID: 976386673518030841}
   - component: {fileID: 2370098590643211718}
+  - component: {fileID: 462938232338060159}
+  - component: {fileID: 6267339934098937000}
+  - component: {fileID: 7519110510822063126}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -337,6 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   data: {fileID: 11400000, guid: 32ccbf2ae2b3e6547b68c52cd6cc5314, type: 2}
   rb: {fileID: 2370098590643211718}
+  stats: {fileID: 0}
 --- !u!114 &3329445748788106357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +356,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 74eded747d3602743bf2c7c4a3cf3043, type: 2}
   enemyDetection: {fileID: 3567084401911746177}
   biteVisuals: {fileID: 7448487823539062740}
+  stats: {fileID: 0}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 384
@@ -445,6 +450,69 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &462938232338060159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2995169884974392590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e70e5d8a08b20724b9f82f7c6c2772ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerExperience
+  level: 1
+  currentExperience: 0
+  baseExperienceToLevel: 50
+  experienceGrowth: 1.25
+--- !u!114 &6267339934098937000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2995169884974392590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7201db6107afe0e4680fcc6420bda49e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Stats
+  baseDamage: 20
+  baseAttackDuration: 0.2
+  baseAttackCooldown: 0.5
+  baseSpecialCooldown: 5
+  baseSpecialDamage: 5
+  baseSpecialTickTimer: 0.2
+  baseSpecialDuration: 2
+  baseSpeed: 4
+  baseSprintSpeed: 6
+  baseDashSpeed: 10
+  baseDashDuration: 0.2
+  baseDashCooldown: 1
+  baseMaxHealth: 100
+  damageBonus: 0
+  specialDamageBonus: 0
+  attackCooldownModifier: 0
+  specialCooldownModifier: 0
+  moveSpeedMultiplier: 1
+  maxHealthBonus: 0
+--- !u!114 &7519110510822063126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2995169884974392590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 100790d35d33e34468648e9d86c58937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPowerUpController
+  combat: {fileID: 3329445748788106357}
+  movement: {fileID: 4346727233981134340}
+  health: {fileID: 976386673518030841}
+  stats: {fileID: 6267339934098937000}
 --- !u!1 &3284626346718309231
 GameObject:
   m_ObjectHideFlags: 0

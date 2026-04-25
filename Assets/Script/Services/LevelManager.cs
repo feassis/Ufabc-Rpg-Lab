@@ -19,6 +19,11 @@ public partial class LevelManager : MonoBehaviour
     [Header("Player Configs")]
     [SerializeField] private GameObject player;
     [SerializeField] private List<SkillSetups> skillSetups;
+    [SerializeField] private PlayerExperience playerExperience;
+    [SerializeField] private PlayerPowerUpController playerPowerUpController;
+    [SerializeField] private Stats playerStats;
+    [SerializeField] private List<PowerUpData> powerUps;
+    [SerializeField] private LevelUpPowerUpUI levelUpPowerUpUI;
     
     [Header("End GAme UI")]
     [SerializeField] private EndGamePopup endGamePopup;
@@ -36,13 +41,21 @@ public partial class LevelManager : MonoBehaviour
         InitializeWave();
     }
 
+    private void OnDestroy()
+    {
+        if (playerExperience != null)
+        {
+            playerExperience.OnLevelUp -= PlayerExperience_OnLevelUp;
+        }
+    }
+
     //Inicializa uma das ondas de inimigos
     private void InitializeWave()
     {
         StartCoroutine(WaveStartUpSequence());
     }
 
-    //sequencia de setup da inicializa��o da onda de inimigos
+    //sequencia de setup da inicializaÃƒÂ§ÃƒÂ£o da onda de inimigos
     private IEnumerator WaveStartUpSequence()
     {
         fixedEnemiesSpawned = 0;
@@ -71,14 +84,14 @@ public partial class LevelManager : MonoBehaviour
         StartWaveSequence(wave);
     }
 
-    //sequencia da inicializa��o da onda de inimigos
+    //sequencia da inicializaÃƒÂ§ÃƒÂ£o da onda de inimigos
     private void StartWaveSequence(Waves wave)
     {
         SpawnFixedEnemies(wave);
         StartCoroutine(SpawnRandomizedEnemies(wave));
     }
 
-    //spawna um inimigo aleatorio e adiciona sua pontua��o no contador
+    //spawna um inimigo aleatorio e adiciona sua pontuaÃƒÂ§ÃƒÂ£o no contador
     private IEnumerator SpawnRandomizedEnemies(Waves wave)
     {
         while (pointsSpawned < wave.PointsGoal)
@@ -127,7 +140,7 @@ public partial class LevelManager : MonoBehaviour
         onComplete?.Invoke();
     }
 
-    //fun��o que spawna o Inimigo e registra ele no level manager
+    //funÃƒÂ§ÃƒÂ£o que spawna o Inimigo e registra ele no level manager
     public EnemyController SpawnEnemy(EnemyController enemy, Vector3 SpawnPos)
     {
         var spawnedEnemy = Instantiate<EnemyController>(enemy);
@@ -151,6 +164,11 @@ public partial class LevelManager : MonoBehaviour
         var deadEnemy = health.gameObject.GetComponent<EnemyController>();
 
         enemies.Remove(deadEnemy);
+
+        if (playerExperience != null && deadEnemy != null && deadEnemy.Data != null)
+        {
+            playerExperience.AddExperience(deadEnemy.Data.ExperienceReward);
+        }
 
         CheckWaveState();
     }
@@ -192,9 +210,44 @@ public partial class LevelManager : MonoBehaviour
     {
         // will spawn player
 
+        ResolvePlayerReferences();
+
         player.GetComponent<Health>().OnDied += Player_OnDied;
 
         AddSkillToPlayer(SkillType.GnarBoomerang);
+        if (playerExperience != null)
+        {
+            playerExperience.OnLevelUp += PlayerExperience_OnLevelUp;
+        }
+        else
+        {
+            Debug.LogWarning("LevelManager precisa de uma referencia para PlayerExperience.");
+        }
+
+        AddSkillToPlayer(SkillType.Boomereng);
+    }
+
+    private void ResolvePlayerReferences()
+    {
+        if (player == null)
+        {
+            return;
+        }
+
+        if (playerExperience == null)
+        {
+            playerExperience = player.GetComponent<PlayerExperience>();
+        }
+
+        if (playerPowerUpController == null)
+        {
+            playerPowerUpController = player.GetComponent<PlayerPowerUpController>();
+        }
+
+        if (playerStats == null)
+        {
+            playerStats = player.GetComponent<Stats>();
+        }
     }
 
     //adiciona uma habilidade ao jogador
@@ -209,5 +262,44 @@ public partial class LevelManager : MonoBehaviour
     private void Player_OnDied(Health obj)
     {
         EndGame(false);
+    }
+
+    private void PlayerExperience_OnLevelUp(int newLevel)
+    {
+        if (powerUps == null || powerUps.Count == 0)
+        {
+            Debug.LogWarning("LevelManager precisa de pelo menos um PowerUpData na lista de powerUps.");
+            return;
+        }
+
+        if (levelUpPowerUpUI == null)
+        {
+            Debug.LogWarning("LevelManager precisa de uma referencia para LevelUpPowerUpUI.");
+            return;
+        }
+
+        levelUpPowerUpUI.Show(GetRandomPowerUps(3), playerStats, player != null ? player.GetComponent<Health>() : null, ApplyPowerUp);
+    }
+
+    private List<PowerUpData> GetRandomPowerUps(int amount)
+    {
+        var availablePowerUps = new List<PowerUpData>();
+        availablePowerUps.AddRange(powerUps);
+
+        var selectedPowerUps = new List<PowerUpData>();
+
+        while (selectedPowerUps.Count < amount && availablePowerUps.Count > 0)
+        {
+            int index = Random.Range(0, availablePowerUps.Count);
+            selectedPowerUps.Add(availablePowerUps[index]);
+            availablePowerUps.RemoveAt(index);
+        }
+
+        return selectedPowerUps;
+    }
+
+    private void ApplyPowerUp(PowerUpData powerUp)
+    {
+        playerPowerUpController?.Apply(powerUp);
     }
 }

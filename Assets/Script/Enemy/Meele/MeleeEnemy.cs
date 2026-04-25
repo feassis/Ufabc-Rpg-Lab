@@ -20,6 +20,7 @@ public class MeleeEnemy : EnemyController
 
     private void Update()
     {
+        base.Update();
         stateMachine.Update();
 
         bool inAttackRange = Vector3.Distance(GetPlayerPos(), transform.position) < Data.AttackRange;
@@ -31,7 +32,7 @@ public class MeleeEnemy : EnemyController
             return;
         }
 
-        // muda para o estado de perseguição caso saia do range
+        // muda para o estado de perseguiï¿½ï¿½o caso saia do range
         if (!inAttackRange && stateMachine.currentState is AttackingState)
         {
             stateMachine.ChangeState(States.CHASING);
