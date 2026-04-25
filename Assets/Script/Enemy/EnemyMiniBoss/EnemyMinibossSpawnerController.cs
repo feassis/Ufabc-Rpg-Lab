@@ -23,29 +23,13 @@ public class EnemyMinibossSpawnerController : DartThrowerEnemy
     protected override void Update()
     {
         stateMachine.Update();
+        base.Update();
 
         //se o timer do spawn estiver zerado muda para o estado de spawn
         if (Time.time > nextSpawnTime)
         {
             stateMachine.ChangeState(States.SPAWNMINION);
             nextSpawnTime = Time.time + Mathf.Max(0.01f, Data.AbilityCooldown);
-            return;
-        }
-
-
-        bool inAttackRange = Vector3.Distance(GetPlayerPos(), transform.position) <= Data.AttackRange;
-
-        //se o inimigo estiver no range atira um dardo
-        if (inAttackRange && stateMachine.currentState is not DartThrowingState && Time.time >= nextThrowTime)
-        {
-            stateMachine.ChangeState(States.SHOOTING);
-            return;
-        }
-
-        //se não estiver atirando muda para o estado de manter distancia
-        else if (stateMachine.currentState is not KeepDistanceState && Time.time < nextThrowTime)
-        {
-            stateMachine.ChangeState(States.KEEPDISTANCE);
             return;
         }
 

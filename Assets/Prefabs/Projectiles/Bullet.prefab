@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7548043588912189908}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.03216519, y: 0.03216519, z: 0.04288692}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.12, y: 0.24, z: 0.16}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2685660705449378586}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6460042287240655751
 SpriteRenderer:
   serializedVersion: 2
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2685660705449378586}
   - component: {fileID: 2646602268394228231}
-  - component: {fileID: 1366517397079687987}
+  - component: {fileID: 8480831054737187917}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -137,8 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537a3faf5b782524f8f8f7ae90ffc629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DartProjectile
---- !u!58 &1366517397079687987
-CircleCollider2D:
+  visualPrefab: {fileID: 7548043588912189908}
+--- !u!61 &8480831054737187917
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -167,9 +168,19 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.05
+  m_Offset: {x: 0.15, y: -0.006}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.07, y: 0.01}
+  m_EdgeRadius: 0
