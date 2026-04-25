@@ -24,6 +24,7 @@ public class DartThrowerEnemy : EnemyController
 
     protected virtual void Update()
     {
+        base.Update();
         stateMachine.Update();
 
         bool inAttackRange = Vector3.Distance(GetPlayerPos(), transform.position) <= Data.AttackRange;

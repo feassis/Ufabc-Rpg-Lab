@@ -117,11 +117,12 @@ public class Health : MonoBehaviour
     //muda a vida maxima
     public void SetMaxHealth(float newMaxHealth, bool fillCurrentHealth = true)
     {
+        var diff = newMaxHealth - maxHealth;
         maxHealth = Mathf.Max(1f, newMaxHealth);
 
         currentHealth = fillCurrentHealth
             ? maxHealth
-            : Mathf.Clamp(currentHealth, 0f, maxHealth);
+            : Mathf.Clamp(currentHealth + diff, 0f, maxHealth);
 
         NotifyHealthChanged();
     }

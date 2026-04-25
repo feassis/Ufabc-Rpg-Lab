@@ -31,7 +31,7 @@ MonoBehaviour:
     Y: -15
     RandownRange: 2
   Waves:
-  - StartUpTimer: 10
+  - StartUpTimer: 2
     MinCoolDownBetweenEnemies: 2
     MaxCoolDownBetweenEnemies: 5
     FixedEnemies:
