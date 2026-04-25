@@ -1,7 +1,9 @@
 using UnityEngine;
 
+//Enumeração para posições dos personagens
 public enum CharacterPosition { Esquerda, Centro, Direita }
 
+//Classe para configurar os retratos dos personagens
 [System.Serializable]
 public class CharacterDisplay
 {
@@ -9,8 +11,8 @@ public class CharacterDisplay
     public CharacterPosition position;
 }
 
+//ScriptableObject para armazenar os dados de cada fala do diálogo
 [CreateAssetMenu(fileName = "NovaFala", menuName = "VN/Lines")]
-
 public class DialogueData : ScriptableObject
 {
     [Header("Configurações de Diálogo")]
