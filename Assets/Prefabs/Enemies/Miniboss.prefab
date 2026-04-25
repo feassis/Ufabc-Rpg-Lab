@@ -193,8 +193,8 @@ GameObject:
   - component: {fileID: 4064312843606985267}
   - component: {fileID: 633255789535269007}
   - component: {fileID: 2366109830798637463}
-  - component: {fileID: 677180971281671607}
   - component: {fileID: 3877144511342617408}
+  - component: {fileID: 5418430615797048877}
   m_Layer: 7
   m_Name: Miniboss
   m_TagString: Untagged
@@ -260,8 +260,35 @@ MonoBehaviour:
   spawnDistance: 4
   maxNumberOfEnemiesSpawned: 15
   enemyNumToSpawnPerCicle: 3
---- !u!58 &677180971281671607
-CircleCollider2D:
+--- !u!50 &3877144511342617408
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4122462635758979592}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &5418430615797048877
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -294,35 +321,9 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.135}
-  m_Radius: 0.09
---- !u!50 &3877144511342617408
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4122462635758979592}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 100
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Offset: {x: 0, y: 0.7}
+  m_Size: {x: 0.35, y: 1.4}
+  m_Direction: 0
 --- !u!1 &7567151926845479595
 GameObject:
   m_ObjectHideFlags: 0
