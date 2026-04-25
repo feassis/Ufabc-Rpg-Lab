@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Referencias")]
     [SerializeField] private PlayerMovementData data;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Stats stats;
 
     private Vector2 moveInput;
     private Vector2 lastDir;
@@ -13,8 +14,10 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing;
     private float dashTimer = 0;
     private float dashTimerCoolDown = 0;
+    private float speedMultiplier = 1f;
 
     public Vector2 GetMoveInput() => moveInput;
+    public PlayerMovementData Data => data;
 
     enum MoveDirection
     {
@@ -35,20 +38,25 @@ public class PlayerMovement : MonoBehaviour
         PlayerInputHandler.OnMoveInput += OnMoveInput;
         PlayerInputHandler.OnSprintInput += OnSprintInput;
         PlayerInputHandler.OnDashInput += OnDashInput;
+
+        if (stats == null)
+        {
+            stats = GetComponent<Stats>();
+        }
     }
 
-    //metodo chamado ao apertar o bot„o de dash
+    //metodo chamado ao apertar o bot√£o de dash
     private void OnDashInput()
     {
         if(Mathf.Max(dashTimer, dashTimerCoolDown) <= 0)
         {
             isDashing = true;
-            dashTimer = data.DashDuration;
-            dashTimerCoolDown = data.DashCoolDown;
+            dashTimer = GetDashDuration();
+            dashTimerCoolDown = GetDashCooldown();
         }
     }
 
-    //metodo chamado ao apertar o bot„o de sprint
+    //metodo chamado ao apertar o bot√£o de sprint
     private void OnSprintInput(bool isSprinting)
     {
         this.isSprinting = isSprinting;
@@ -75,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    //nesse update os timers s„o atualizados com o framerate 
+    //nesse update os timers s√£o atualizados com o framerate 
     private void Update()
     {
         if (dashTimer > 0)
@@ -94,17 +102,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //metodo de movimentaÁ„o do jogador
+    //metodo de movimenta√ß√£o do jogador
     private void Move()
     {
         var velocity = rb.linearVelocity;
         //se esta durante o dash
         if (isDashing && dashTimer > 0)
         {
-            velocity = lastDir * data.DashSpeed;
+            velocity = lastDir * GetDashSpeed();
             rb.linearVelocity = velocity;
         }
-        // movimentaÁ„o normal
+        // movimenta√ß√£o normal
         else
         {
             velocity = moveInput.normalized * GetVelocity();
@@ -136,7 +144,32 @@ public class PlayerMovement : MonoBehaviour
         rb.SetRotation(targetAngle);
     }
 
-    private float GetVelocity() => isSprinting ? data.SprintSpeed : data.Speed;
+    public void MultiplySpeed(float multiplier)
+    {
+        if (stats != null)
+        {
+            stats.MultiplyMoveSpeed(multiplier);
+            return;
+        }
+
+        speedMultiplier *= Mathf.Max(0.1f, multiplier);
+    }
+
+    private float GetVelocity()
+    {
+        if (stats != null)
+        {
+            return isSprinting ? stats.SprintSpeed : stats.Speed;
+        }
+
+        return (isSprinting ? data.SprintSpeed : data.Speed) * speedMultiplier;
+    }
+
+    private float GetDashSpeed() => stats != null ? stats.DashSpeed : data.DashSpeed;
+
+    private float GetDashDuration() => stats != null ? stats.DashDuration : data.DashDuration;
+
+    private float GetDashCooldown() => stats != null ? stats.DashCooldown : data.DashCoolDown;
 
     private void FixedUpdate()
     {

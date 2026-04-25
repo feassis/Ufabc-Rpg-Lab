@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 1901520481068567955}
   - component: {fileID: 976386673518030841}
   - component: {fileID: 2370098590643211718}
+  - component: {fileID: 462938232338060159}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -445,6 +446,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &462938232338060159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2995169884974392590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e70e5d8a08b20724b9f82f7c6c2772ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerExperience
+  level: 1
+  currentExperience: 0
+  baseExperienceToLevel: 50
+  experienceGrowth: 1.25
 --- !u!1 &3284626346718309231
 GameObject:
   m_ObjectHideFlags: 0
