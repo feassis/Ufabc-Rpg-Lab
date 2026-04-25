@@ -20,7 +20,7 @@ public class Card : MonoBehaviour
         }
     }
 
-    public void Setup(PowerUpData data, Stats stats, Action<PowerUpData> onSelected)
+    public void Setup(PowerUpData data, Stats stats, Health health, Action<PowerUpData> onSelected)
     {
         powerUpData = data;
 
@@ -31,7 +31,7 @@ public class Card : MonoBehaviour
 
         if (descriptionText != null)
         {
-            descriptionText.text = data.GetDisplayText(stats);
+            descriptionText.text = data.GetDisplayText(stats, health);
         }
 
         if (visualInstance != null)

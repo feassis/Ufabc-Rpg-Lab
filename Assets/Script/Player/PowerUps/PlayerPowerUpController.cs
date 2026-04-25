@@ -59,10 +59,13 @@ public class PlayerPowerUpController : MonoBehaviour
                 break;
             case PowerUpType.IncreaseMaxHealth:
                 stats?.AddMaxHealthBonus(powerUp.Value);
-                SyncMaxHealth(true);
+                SyncMaxHealth(false);
                 break;
             case PowerUpType.AddSkill:
                 combat?.AddSkill(powerUp.SkillPrefab);
+                break;
+            case PowerUpType.Heal:
+                health?.Heal(powerUp.Value);
                 break;
         }
     }

@@ -278,7 +278,7 @@ public partial class LevelManager : MonoBehaviour
             return;
         }
 
-        levelUpPowerUpUI.Show(GetRandomPowerUps(3), playerStats, ApplyPowerUp);
+        levelUpPowerUpUI.Show(GetRandomPowerUps(3), playerStats, player != null ? player.GetComponent<Health>() : null, ApplyPowerUp);
     }
 
     private List<PowerUpData> GetRandomPowerUps(int amount)

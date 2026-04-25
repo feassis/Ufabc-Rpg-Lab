@@ -60,5 +60,7 @@ MonoBehaviour:
   powerUps:
   - {fileID: 11400000, guid: 63539d47f710d7041adb6d0dc2714e7e, type: 2}
   - {fileID: 11400000, guid: 3c9ddf1dcc2a6ec47ac041563eed94c9, type: 2}
+  - {fileID: 11400000, guid: 5166bc9b399da0343b667ef082e1253e, type: 2}
+  - {fileID: 11400000, guid: 7b335e19e2241814eb03df78919e50d1, type: 2}
   levelUpPowerUpUI: {fileID: 0}
   endGamePopup: {fileID: 0}

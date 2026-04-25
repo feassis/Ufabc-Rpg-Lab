@@ -10,7 +10,7 @@ public class PowerUpData : ScriptableObject
     public Skill SkillPrefab;
     public GameObject VisualEffectPrefab;
 
-    public string GetDisplayText(Stats stats)
+    public string GetDisplayText(Stats stats, Health health = null)
     {
         if (string.IsNullOrWhiteSpace(Description))
         {
@@ -44,6 +44,25 @@ public class PowerUpData : ScriptableObject
                 .Replace("{p0}", $"{currentValue.ToString("0.0")}s")
                 .Replace("{p1}", $"{newValue.ToString("0.0")}s");
         }
+
+        if (Type == PowerUpType.IncreaseMaxHealth)
+        {
+            float currentValue = stats != null ? stats.MaxHealth : 0f;
+            displayText = displayText
+                .Replace("{p0}", currentValue.ToString("0"))
+                .Replace("{p1}", (currentValue + Value).ToString("0"));
+        }
+
+        if (Type == PowerUpType.Heal)
+        {
+            float currentValue = health != null ? health.CurrentHealth : 0f;
+            float maxHealth = health != null ? health.MaxHealth : (stats != null ? stats.MaxHealth : 0f);
+            float newValue = Mathf.Min(currentValue + Value, maxHealth);
+            displayText = displayText
+                .Replace("{p0}", Value.ToString("0"))
+                .Replace("{p1}", newValue.ToString("0"));
+        }
+
 
         return displayText;
     }

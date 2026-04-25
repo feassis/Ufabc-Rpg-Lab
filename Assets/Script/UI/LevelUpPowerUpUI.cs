@@ -18,7 +18,7 @@ public class LevelUpPowerUpUI : MonoBehaviour
         Hide();
     }
 
-    public void Show(IReadOnlyList<PowerUpData> options, Stats playerStats, Action<PowerUpData> onSelected)
+    public void Show(IReadOnlyList<PowerUpData> options, Stats playerStats, Health playerHealth, Action<PowerUpData> onSelected)
     {
         if (panel == null || optionsHolder == null || optionButtonPrefab == null)
         {
@@ -42,7 +42,7 @@ public class LevelUpPowerUpUI : MonoBehaviour
             PowerUpData option = options[i];
             Card card = Instantiate(optionButtonPrefab, optionsHolder);
             card.gameObject.SetActive(true);
-            card.Setup(option, playerStats, Select);
+            card.Setup(option, playerStats, playerHealth, Select);
             spawnedCards.Add(card);
         }
 

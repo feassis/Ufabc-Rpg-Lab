@@ -7,4 +7,5 @@ public enum PowerUpType
     IncreaseMoveSpeed = 4,
     IncreaseMaxHealth = 5,
     AddSkill = 6,
+    Heal = 7
 }
