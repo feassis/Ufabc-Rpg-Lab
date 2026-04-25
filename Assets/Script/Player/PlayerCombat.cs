@@ -34,6 +34,8 @@ public class PlayerCombat : MonoBehaviour
 
     public event Action<float> OnSpecialUpdate;
 
+    public float GetDamage() => data.Damage;
+
     //se inscreve aos inputs de attack e special e configura o line renderes dos lazers do special
     private void Awake()
     {
