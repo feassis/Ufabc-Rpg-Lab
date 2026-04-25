@@ -194,7 +194,7 @@ public partial class LevelManager : MonoBehaviour
 
         player.GetComponent<Health>().OnDied += Player_OnDied;
 
-        AddSkillToPlayer(SkillType.Boomereng);
+        AddSkillToPlayer(SkillType.GnarBoomerang);
     }
 
     //adiciona uma habilidade ao jogador
