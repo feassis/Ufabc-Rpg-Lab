@@ -42,6 +42,7 @@ public class DartProjectile : MonoBehaviour
         TryHit(collision.gameObject);
     }
 
+    //tenta dar dano
     private void TryHit(GameObject target)
     {
         if (target == null)
@@ -54,6 +55,7 @@ public class DartProjectile : MonoBehaviour
             return;
         }
 
+        //tenta pegar o componente health
         if (target.TryGetComponent<Health>(out Health targetHealth))
         {
             targetHealth.TakeDamage(Mathf.Max(0f, data != null ? data.Damage : 0f));
