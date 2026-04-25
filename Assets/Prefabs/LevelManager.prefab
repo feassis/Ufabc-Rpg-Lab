@@ -52,4 +52,13 @@ MonoBehaviour:
   skillSetups:
   - Type: 1
     Skill: {fileID: 5504550290684504655, guid: dbe97ebc2dec38e4b942069877d63b79, type: 3}
+  - Type: 2
+    Skill: {fileID: 3029449383201824309, guid: 380bc433517b28645ab9c586e2ae0482, type: 3}
+  playerExperience: {fileID: 0}
+  playerPowerUpController: {fileID: 0}
+  playerStats: {fileID: 0}
+  powerUps:
+  - {fileID: 11400000, guid: 63539d47f710d7041adb6d0dc2714e7e, type: 2}
+  - {fileID: 11400000, guid: 3c9ddf1dcc2a6ec47ac041563eed94c9, type: 2}
+  levelUpPowerUpUI: {fileID: 0}
   endGamePopup: {fileID: 0}

@@ -46,7 +46,7 @@ public class PlayerCombat : MonoBehaviour
     public event Action<CombatCooldownType, float> OnCooldownUpdate;
     public PlayerCombatData Data => data;
 
-    public float GetDamage() => data.Damage;
+    //public float GetDamage() => data.Damage;
 
     //se inscreve aos inputs de attack e special e configura o line renderes dos lazers do special
     private void Awake()
@@ -340,7 +340,7 @@ public class PlayerCombat : MonoBehaviour
 
     private float GetAttackRecoveryDuration() => Mathf.Max(GetAttackCooldown(), GetAttackDuration());
 
-    private float GetDamage() => stats != null ? stats.Damage : data.Damage + damageBonus;
+    public float GetDamage() => stats != null ? stats.Damage : data.Damage + damageBonus;
 
     private float GetSpecialDamage() => stats != null ? stats.SpecialDamage : data.SpecialDamage + specialDamageBonus;
 
