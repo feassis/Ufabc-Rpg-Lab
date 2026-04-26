@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//scriptable object para configuração do inimigo 
 [CreateAssetMenu(fileName = "EnemyData", menuName = "Setup/Enemy/Enemy Data")]
 public class EnemyData : ScriptableObject
 {
@@ -9,4 +10,5 @@ public class EnemyData : ScriptableObject
     public float AttackDamage = 10f;
     public float AttackCooldown = 0.5f;
     public float AbilityCooldown = 10f;
+    public int ExperienceReward = 10;
 }

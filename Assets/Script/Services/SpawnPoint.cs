@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+//retorna uma posição dentro de um alcance
 [Serializable]
 public class SpawnPoint
 {

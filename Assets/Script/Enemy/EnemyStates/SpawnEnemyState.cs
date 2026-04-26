@@ -1,5 +1,6 @@
 using StatePattern.StateMachine;
 
+//estado de spawnar um inimigo
 public class SpawnEnemyState : IState
 {
     public EnemyController Owner { get; set; }

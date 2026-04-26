@@ -1,5 +1,6 @@
 using StatePattern.StateMachine;
 
+//state machine para o inimigo ranged
 public class DartThrowerStateMachine : GenericStateMachine<DartThrowerEnemy>
 {
     public DartThrowerStateMachine(DartThrowerEnemy owner) : base(owner)

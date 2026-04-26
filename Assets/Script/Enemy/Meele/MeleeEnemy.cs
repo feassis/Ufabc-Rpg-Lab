@@ -1,7 +1,8 @@
 using StatePattern.StateMachine;
 using UnityEngine;
 
-public class MeeleEnemy : EnemyController
+//classe do inimigo melee
+public class MeleeEnemy : EnemyController
 {
     private MeeleStateMachine stateMachine;
 
@@ -19,16 +20,19 @@ public class MeeleEnemy : EnemyController
 
     private void Update()
     {
+        base.Update();
         stateMachine.Update();
 
         bool inAttackRange = Vector3.Distance(GetPlayerPos(), transform.position) < Data.AttackRange;
 
+        //muda para o estado de ataque caso esteja no range
         if (inAttackRange && stateMachine.currentState is not AttackingState)
         {
             stateMachine.ChangeState(States.ATTACKING);
             return;
         }
 
+        // muda para o estado de persegui��o caso saia do range
         if (!inAttackRange && stateMachine.currentState is AttackingState)
         {
             stateMachine.ChangeState(States.CHASING);

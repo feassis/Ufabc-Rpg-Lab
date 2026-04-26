@@ -1,8 +1,9 @@
 using StatePattern.StateMachine;
 
-public class MeeleStateMachine : GenericStateMachine<MeeleEnemy>
+//state machine do inimigo melee
+public class MeeleStateMachine : GenericStateMachine<MeleeEnemy>
 {
-    public MeeleStateMachine(MeeleEnemy Owner) : base(Owner)
+    public MeeleStateMachine(MeleeEnemy Owner) : base(Owner)
     {
         CreateState();
         SetOwner();

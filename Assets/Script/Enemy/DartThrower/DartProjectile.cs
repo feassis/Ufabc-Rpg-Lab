@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class DartProjectile : MonoBehaviour
 {
+    [SerializeField] private GameObject visualPrefab;
     private Vector2 direction;
     private ProjectileData data;
     private float lifeRemaining;
@@ -13,6 +14,13 @@ public class DartProjectile : MonoBehaviour
         data = projectileData;
         lifeRemaining = Mathf.Max(0.1f, data.Lifetime);
         owner = projectileOwner;
+
+        // align rotation to travel direction (2D: z-axis)
+        if (direction != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            visualPrefab.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        }
     }
 
     private void Update()
@@ -42,6 +50,7 @@ public class DartProjectile : MonoBehaviour
         TryHit(collision.gameObject);
     }
 
+    //tenta dar dano
     private void TryHit(GameObject target)
     {
         if (target == null)
@@ -54,6 +63,7 @@ public class DartProjectile : MonoBehaviour
             return;
         }
 
+        //tenta pegar o componente health
         if (target.TryGetComponent<Health>(out Health targetHealth))
         {
             targetHealth.TakeDamage(Mathf.Max(0f, data != null ? data.Damage : 0f));

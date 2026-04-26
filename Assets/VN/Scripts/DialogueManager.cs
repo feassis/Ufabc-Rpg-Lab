@@ -21,20 +21,25 @@ public class DialogueManager : MonoBehaviour
     private List <string> historyLog =  new List<string>();
     private Coroutine typeWriterCoroutine;
 
+    //Funcao para exibir personagens, background e dialogo na tela, de acordo com os dados do ScriptableObject
     public void DisplayDialogue(DialogueData data)
     {
+        //Configura o nome do personagem e o texto do diálogo
         nameText.text = data.characterName;
         dialogueText.text = data.dialogueText;
 
+        //Toca o áudio associado, se houver
         if (data.audioClip != null && audioSource != null)
         {
             audioSource.Stop();
             audioSource.PlayOneShot(data.audioClip);
         }
-
+        
+        //Adiciona o diálogo ao histórico
         string entry = $"<b>{data.characterName}:</b> {data.dialogueText}";
         historyLog.Add(entry);
 
+        //Exibe o texto com efeito de máquina de escrever
         if(typeWriterCoroutine != null) StopCoroutine(typeWriterCoroutine);
         if (data.ehAnimacao || data.finalDeAnimacao)
         {
@@ -44,6 +49,7 @@ public class DialogueManager : MonoBehaviour
         else
             typeWriterCoroutine = StartCoroutine(DigitarTexto(data.dialogueText));
 
+        //Configura os retratos dos personagens
         foreach (var slot in portraitSlots) slot.gameObject.SetActive(false);
 
         for (int i = 0; i < data.characterDisplay.Length; i++)
@@ -60,10 +66,12 @@ public class DialogueManager : MonoBehaviour
             ConfigurarPosicao(rt, pData.position);
         }
 
+        //Configura o background
         if (data.backgroundSprite != null)
             backgroundDisplay.sprite = data.backgroundSprite;
     }
 
+    //Coroutine para o efeito de máquina de escrever
     IEnumerator DigitarTexto(string fullText)
     {
         isTyping = true;
@@ -76,6 +84,7 @@ public class DialogueManager : MonoBehaviour
         isTyping = false;
     }
 
+    //Função para completar o texto imediatamente, caso o jogador queira pular a animação
     public void CompletarTexto(string fullText)
     {
         if (typeWriterCoroutine != null) StopCoroutine(typeWriterCoroutine);
@@ -83,11 +92,13 @@ public class DialogueManager : MonoBehaviour
         isTyping = false;
     }
 
+    //Função para obter o histórico de diálogos
     public List<string> GetHistory()
     {
         return historyLog;
     }
 
+    //Configura a posição do retrato com base na enumeração
     private void ConfigurarPosicao(RectTransform rt, CharacterPosition pos)
     {
         Vector2 anchor = Vector2.zero;

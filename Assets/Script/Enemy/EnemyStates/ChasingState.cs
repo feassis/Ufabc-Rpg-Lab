@@ -15,6 +15,7 @@ public class ChasingState : IState
         
     }
 
+    // move o inimigo em direção do player
     public void Update()
     {
         var dir = Owner.GetPlayerPos() - Owner.transform.position;

@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5551054155787089614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8918772760569502080}
+  - component: {fileID: 8453293966923036977}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8918772760569502080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5551054155787089614}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8453293966923036977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5551054155787089614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2c87d48a7294c42a4dc7fc2dbd1bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  Data: {fileID: 11400000, guid: 9830933c4ccbf0d45aa86986eeaf18c1, type: 2}
+  enemyHolder: {fileID: 0}
+  startWavesPanel: {fileID: 0}
+  startWavesText: {fileID: 0}
+  player: {fileID: 0}
+  skillSetups:
+  - Type: 1
+    Skill: {fileID: 5504550290684504655, guid: dbe97ebc2dec38e4b942069877d63b79, type: 3}
+  - Type: 2
+    Skill: {fileID: 3029449383201824309, guid: 380bc433517b28645ab9c586e2ae0482, type: 3}
+  playerExperience: {fileID: 0}
+  playerPowerUpController: {fileID: 0}
+  playerStats: {fileID: 0}
+  powerUps:
+  - {fileID: 11400000, guid: 63539d47f710d7041adb6d0dc2714e7e, type: 2}
+  - {fileID: 11400000, guid: 3c9ddf1dcc2a6ec47ac041563eed94c9, type: 2}
+  - {fileID: 11400000, guid: 5166bc9b399da0343b667ef082e1253e, type: 2}
+  - {fileID: 11400000, guid: 7b335e19e2241814eb03df78919e50d1, type: 2}
+  levelUpPowerUpUI: {fileID: 0}
+  endGamePopup: {fileID: 0}

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//classe para caausar dano de contato
 public class DamageOnContact : MonoBehaviour
 {
     [Header("Damage")]
@@ -23,6 +24,8 @@ public class DamageOnContact : MonoBehaviour
         ownerHealth = GetComponentInParent<Health>();
     }
 
+
+    //detecta a entrada do objeto e tenta causar dano
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!damageOnTrigger)
@@ -33,6 +36,7 @@ public class DamageOnContact : MonoBehaviour
         TryDamage(other.gameObject);
     }
 
+    //detecta a permanescia do objeto  e tenta causar dano
     private void OnTriggerStay2D(Collider2D other)
     {
         if (!damageOnTrigger)
@@ -43,11 +47,13 @@ public class DamageOnContact : MonoBehaviour
         TryDamage(other.gameObject);
     }
 
+    //detecta a saida do objeto
     private void OnTriggerExit2D(Collider2D other)
     {
         nextDamageTimes.Remove(other.gameObject.GetInstanceID());
     }
 
+    //detecta o começo da colisão e tenta causar dano
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!damageOnCollision)
@@ -58,6 +64,7 @@ public class DamageOnContact : MonoBehaviour
         TryDamage(collision.gameObject);
     }
 
+    //detecta a permanencia da colisão e tenta causar dano
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (!damageOnCollision)
@@ -68,11 +75,13 @@ public class DamageOnContact : MonoBehaviour
         TryDamage(collision.gameObject);
     }
 
+    //detecta a saida da colisão
     private void OnCollisionExit2D(Collision2D collision)
     {
         nextDamageTimes.Remove(collision.gameObject.GetInstanceID());
     }
 
+    //tenta applicar o dado
     private void TryDamage(GameObject target)
     {
         if (target == null)

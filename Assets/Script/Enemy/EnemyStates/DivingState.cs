@@ -22,6 +22,7 @@ public class DivingState : IState
     {
         var dir = Owner.GetShadowPos() - Owner.GetBodyPos();
 
+        //move o inimigo em direção do player
         if (dir.sqrMagnitude >= 0.01)
         {
             Owner.transform.position = Owner.transform.position + direction.normalized * Owner.Data.DashSpeed * Time.deltaTime;

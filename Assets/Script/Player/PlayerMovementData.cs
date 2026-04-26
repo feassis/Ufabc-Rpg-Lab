@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//scriptable object que configura as informações de movimento no player
 [CreateAssetMenu(fileName = "New Player Movement Data", menuName = "Setup/Player/Movement Data")]
 public class PlayerMovementData : ScriptableObject
 {

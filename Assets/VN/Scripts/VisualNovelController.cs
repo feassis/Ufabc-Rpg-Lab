@@ -8,6 +8,7 @@ public class VisualNovelController : MonoBehaviour
 {
     [Header("Configurações de Scenes")]
     public string proximaCena;
+    public GameObject painelFimDeCena;
 
     [Header ("Componentes")]
     public DialogueManager dialogueManager;
@@ -30,6 +31,7 @@ public class VisualNovelController : MonoBehaviour
 
         if (logAberto) return;
 
+        //Avança o diálogo quando o espaço ou clique é pressionado, ou automaticamente se o modo auto estiver ativado
         if (espacoApertado || cliqueApertado)
         {
             if  (dialogueManager.isTyping)
@@ -43,12 +45,14 @@ public class VisualNovelController : MonoBehaviour
             return;
         }
 
+        //Calcula o tempo necessário para avançar automaticamente, baseado no comprimento do texto e se é uma animação
         string textoLimpo = cenaAtual[index].dialogueText.Replace(" ", "");
         int comprimentoReal = textoLimpo.Length;
 
         timerAuto += Time.deltaTime;
         float tempoParaAvancar = float.MaxValue;
 
+        //Se for uma animação, usa o tempo definido no ScriptableObject. Se for auto mode, calcula com base no número de caracteres. Caso contrário, não avança automaticamente.
         if (cenaAtual[index].ehAnimacao)
         {
             tempoParaAvancar = cenaAtual[index].tempoExibicao;
@@ -62,12 +66,14 @@ public class VisualNovelController : MonoBehaviour
             tempoParaAvancar = float.MaxValue;
         }
         Debug.Log("Tempo para avançar: " + tempoParaAvancar + "Esse é o tempo por caracter: " + tempoPorCaractere + "esse é o numero de caracteres: " + comprimentoReal);
+        //Avança automaticamente se o timer atingir o tempo necessário
         if (timerAuto >= tempoParaAvancar)
         {
             AvancarCena();
         }
     }
 
+    //Função para alternar o modo automático
     public void ToggleAuto()
     {
         autoMode = !autoMode;
@@ -76,6 +82,7 @@ public class VisualNovelController : MonoBehaviour
         AtualizarBotaoAuto();
     }
 
+    //Função para atualizar o texto do botão de auto mode
     private void AtualizarBotaoAuto()
     {
         if (autoButtonText != null)
@@ -84,8 +91,10 @@ public class VisualNovelController : MonoBehaviour
         }
     }
 
+    //Função para avançar para a próxima fala ou cena
     public void AvancarCena()
     {
+        //Se ainda houver falas na cena atual, avança para a próxima fala. Caso contrário, exibe o painel de fim de cena
         if (index < cenaAtual.Length - 1)
         {
             index++;
@@ -96,11 +105,19 @@ public class VisualNovelController : MonoBehaviour
         {
             Debug.Log("Fim da cena atual.");
             autoMode = false;
-            CarregarProximaScene();
+            if (painelFimDeCena != null)
+            {
+                painelFimDeCena.SetActive(true);
+            }
+            else
+            {
+                Debug.LogWarning("Painel de fim de cena não foi atribuído no Inspector!");
+            }
         }
     }
 
-    private void CarregarProximaScene()
+    //Função para carregar a próxima cena usando o SceneManager
+    public void CarregarProximaScene()
     {
         if (!string.IsNullOrEmpty(proximaCena))
         {
@@ -114,6 +131,7 @@ public class VisualNovelController : MonoBehaviour
 
     void Start()
     {   
+        //Inicia o diálogo com a primeira fala da cena atual e atualiza o botão de auto mode
         AtualizarBotaoAuto();
         if(cenaAtual != null && cenaAtual.Length > 0)
         {

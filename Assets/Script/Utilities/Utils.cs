@@ -23,6 +23,7 @@ public static class ListExtensions
         return list[index];
     }
 
+    //Pega uma entrada aleatória
     public static int GetRandomEntryIndex<T>(this List<T> list)
     {
         if (list == null || list.Count == 0)
@@ -35,6 +36,8 @@ public static class ListExtensions
     }
 
     public static System.Random r = new System.Random();
+
+    //embaralha uma lista
     public static void Shuffle<T>(this IList<T> list)
     {
         int n = list.Count;

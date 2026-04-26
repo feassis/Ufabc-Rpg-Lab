@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 
+//classe basse para as skills dos jogadores
+
 public class Skill : MonoBehaviour
 {
     public event Action<EnemyController> OnEnemyHited;
@@ -16,3 +18,5 @@ public class Skill : MonoBehaviour
         }
     }
 }
+
+

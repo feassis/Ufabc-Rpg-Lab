@@ -1,5 +1,6 @@
 using StatePattern.StateMachine;
 
+//state machine do inimigo voador
 public class FlyingDroneStateMachine : GenericStateMachine<FlyingDroneEnemy>
 {
     public FlyingDroneStateMachine(FlyingDroneEnemy Owner) : base(Owner)

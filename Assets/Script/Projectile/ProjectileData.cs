@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//scriptable object para configurar os dados de um projeto
 [CreateAssetMenu(fileName = "ProjectileData", menuName = "Setup/Projectile/Projectile Data")]
 public class ProjectileData : ScriptableObject
 {

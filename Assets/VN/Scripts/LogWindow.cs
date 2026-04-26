@@ -2,12 +2,14 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 
+//Script para gerenciar a janela de log do diálogo
 public class LogWindow : MonoBehaviour
 {
     public DialogueManager dialogueManager;
     public TextMeshProUGUI logTextComponent;
     public GameObject panel;
 
+    //Função para alternar a visibilidade do painel de log
     public void ToggleLog()
     {
         bool isActive = !panel.activeSelf;
@@ -19,6 +21,7 @@ public class LogWindow : MonoBehaviour
         }
     }
 
+    //Função para adicionar uma nova entrada ao log e atualizar o texto
     private void AtualizarTextoLog()
     {
         List<string> logs = dialogueManager.GetHistory();

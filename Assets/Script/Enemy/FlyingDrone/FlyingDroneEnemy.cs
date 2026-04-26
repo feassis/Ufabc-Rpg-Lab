@@ -1,6 +1,7 @@
 using StatePattern.StateMachine;
 using UnityEngine;
 
+//classe do inimigo voador
 public class FlyingDroneEnemy : EnemyController
 {
     private FlyingDroneStateMachine stateMachine;
@@ -23,6 +24,7 @@ public class FlyingDroneEnemy : EnemyController
 
         Debug.Log($"Distance {Vector3.Distance(GetPlayerPos(), transform.position)}");
 
+        //se chegar no range de ataque ele muda para o estado de mergulho
         if(Vector3.Distance(GetPlayerPos(), transform.position) < Data.AttackRange)
         {
             stateMachine.ChangeState(States.DIVING);

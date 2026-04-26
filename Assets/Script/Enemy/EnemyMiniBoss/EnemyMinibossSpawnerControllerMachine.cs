@@ -1,5 +1,6 @@
 using StatePattern.StateMachine;
 
+//classe do state machine do miniboss que invoca inimigos
 public class EnemyMinibossSpawnerControllerMachine : GenericStateMachine<EnemyMinibossSpawnerController>
 {
     public EnemyMinibossSpawnerControllerMachine(EnemyMinibossSpawnerController owner) : base(owner)

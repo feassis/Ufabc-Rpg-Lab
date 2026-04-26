@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//classe de gerenciamento da interface com o usuário
 public class PlayerInputHandler : MonoBehaviour
 {
     private PlayerInputs inputActions;
@@ -12,6 +13,7 @@ public class PlayerInputHandler : MonoBehaviour
     public static Action OnAttackInput;
     public static Action OnSpecialInput;
 
+    //inicialisa o InputAction e registra os methodos aos eventos de input
     private void OnEnable()
     {
         if(inputActions == null)
@@ -28,41 +30,50 @@ public class PlayerInputHandler : MonoBehaviour
         inputActions.Combat.Special.performed += Special_performed;
     }
 
+    //chama o evento de special
     private void Special_performed(InputAction.CallbackContext obj)
     {
         OnSpecialInput?.Invoke();
     }
 
+    //chama o evento de attack
     private void Attack_performed(InputAction.CallbackContext obj)
     {
         OnAttackInput?.Invoke();
     }
 
+    //chama o evento de dash performado
     private void Dash_performed(InputAction.CallbackContext obj)
     {
         OnDashInput?.Invoke();
     }
 
+    //chama o evento de sprint cancelado
     private void Sprint_canceled(InputAction.CallbackContext obj)
     {
         OnSprintInput?.Invoke(false);
     }
 
+    //chama o evento de sprint performado
     private void Sprint_performed(InputAction.CallbackContext obj)
     {
         OnSprintInput?.Invoke(true);
     }
 
+    //chama o evento de movimento cancelado
     private void Move_Canceled(InputAction.CallbackContext context)
     {
         OnMoveInput?.Invoke(Vector2.zero);
     }
 
+    //chama o evento de movimento performado
     private void Move_Performed(UnityEngine.InputSystem.InputAction.CallbackContext input)
     {
         OnMoveInput?.Invoke(input.ReadValue<Vector2>());
     }
 
+
+    //retorna a posição do mouse no mundo
     public static Vector3 GetMousePosInWorld()
     {
         Vector3 mousePos = Mouse.current.position.ReadValue();
@@ -76,6 +87,7 @@ public class PlayerInputHandler : MonoBehaviour
         return mousePos;
     }
 
+    //desliga o InputAction e desregistra os methodos aos eventos de input
     private void OnDisable()
     {
         if(inputActions == null)
