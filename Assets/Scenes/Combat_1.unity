@@ -1287,6 +1287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndGameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1162165619602228074, guid: 85d96289be390cf4899a932c6f718456, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1313,11 +1317,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 142
       objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1349,11 +1353,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -187.99509
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -539.78644
+      value: -71
       objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
