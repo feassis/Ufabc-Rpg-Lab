@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fdb61c7b2ee38d43a4a2eaeb5391f7a, type: 3}
-  m_Name: Level 1
+  m_Name: Level 2
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   Scenary: {fileID: 9144739637230275065, guid: fb686743a63646f49a55269e2c484aa6, type: 3}
   PlayerSpawnPoint:
@@ -34,10 +34,23 @@ MonoBehaviour:
   - StartUpTimer: 2
     MinCoolDownBetweenEnemies: 2
     MaxCoolDownBetweenEnemies: 5
-    FixedEnemies: []
+    FixedEnemies:
+    - SpawnTime: 5
+      Enemy: {fileID: 2366109830798637463, guid: d133cb9170b02ce46929baa92e4bf367, type: 3}
     PointsGoal: 3
     EnemyOptions:
     - Points: 1
       Enemy: {fileID: -1984645112125697872, guid: 97f6605ff13b0df4492e043f51898dde, type: 3}
     - Points: 1
       Enemy: {fileID: 3469848046154557856, guid: 6d46e181a24554747aa873fa45375edc, type: 3}
+  - StartUpTimer: 10
+    MinCoolDownBetweenEnemies: 2
+    MaxCoolDownBetweenEnemies: 5
+    FixedEnemies: []
+    PointsGoal: 5
+    EnemyOptions:
+    - Points: 1
+      Enemy: {fileID: -1984645112125697872, guid: 97f6605ff13b0df4492e043f51898dde, type: 3}
+    - Points: 1
+      Enemy: {fileID: 3469848046154557856, guid: 6d46e181a24554747aa873fa45375edc, type: 3}
+  NextLevel: 

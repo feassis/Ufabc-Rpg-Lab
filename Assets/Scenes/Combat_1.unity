@@ -1232,6 +1232,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndGameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1162165619602228074, guid: 85d96289be390cf4899a932c6f718456, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298116872027467824, guid: 85d96289be390cf4899a932c6f718456, type: 3}
+      propertyPath: winMessage
+      value: You won!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298116872027467824, guid: 85d96289be390cf4899a932c6f718456, type: 3}
+      propertyPath: nextLevelName
+      value: Cutscene_02
+      objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1258,11 +1270,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1274,7 +1286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5140.9863
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1294,11 +1306,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -187.99509
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -539.78644
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7259242021792726702, guid: 85d96289be390cf4899a932c6f718456, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1696,6 +1708,10 @@ PrefabInstance:
     - target: {fileID: 6091895387957186409, guid: 8c6ac44624094d0409029ce4d3859375, type: 3}
       propertyPath: m_Name
       value: Stats
+      objectReference: {fileID: 0}
+    - target: {fileID: 6091895387957186409, guid: 8c6ac44624094d0409029ce4d3859375, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6351503959473158137, guid: 8c6ac44624094d0409029ce4d3859375, type: 3}
       propertyPath: targetExperience

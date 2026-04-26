@@ -13,7 +13,6 @@ public class LevelData : ScriptableObject
     
     public List<Waves> Waves;
 
-    public string NextLevel;
 
     public SpawnPoint GetRandomEnemySpawnPoint() => EnemySpawnPoints.GetRandomEntry();
 }
