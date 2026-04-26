@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Transform body;
     [SerializeField] private Transform shadow;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] protected Animator animator;
     [Header("Visuals")]
     [SerializeField] private GameObject visuals;
 
@@ -19,6 +20,8 @@ public class EnemyController : MonoBehaviour
     private Vector3 bodyStartlocalPos;
 
     public LevelManager levelManager {  get; private set; }
+
+    public Animator GetAnimator() => animator;
 
     [field: SerializeField] public EnemyData Data {  get; protected set; }
 

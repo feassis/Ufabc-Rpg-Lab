@@ -5,7 +5,7 @@ using UnityEngine;
 //classe que controla o miniboss
 public class EnemyMinibossSpawnerController : DartThrowerEnemy
 {
-    [SerializeField] private EnemyController enemyPrefab;
+    [SerializeField] private List<EnemyController> enemyPrefabs = new List<EnemyController>();
     [SerializeField] private float spawnDistance;
     [SerializeField] private int maxNumberOfEnemiesSpawned = 15;
     [SerializeField] private int enemyNumToSpawnPerCicle = 3;
@@ -43,7 +43,7 @@ public class EnemyMinibossSpawnerController : DartThrowerEnemy
             return;
         }
 
-        var minion = levelManager.SpawnEnemy(enemyPrefab, transform.position + new Vector3(Random.Range(0f, spawnDistance), Random.Range(0f, spawnDistance), 0));
+        var minion = levelManager.SpawnEnemy(enemyPrefabs.GetRandomEntry<EnemyController>(), transform.position + new Vector3(Random.Range(0f, spawnDistance), Random.Range(0f, spawnDistance), 0));
 
         minion.gameObject.GetComponent<Health>().OnDied += OnMinionDied;
         minions.Add(minion);

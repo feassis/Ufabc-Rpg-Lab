@@ -32,6 +32,7 @@ public class AttackingState : IState
             return;
         }
 
+        Owner.GetAnimator().Play("ATK");
         //tenta pegar o componete de vida od player
         if (targetHealth == null)
         {
