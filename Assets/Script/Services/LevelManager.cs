@@ -158,6 +158,12 @@ public partial class LevelManager : MonoBehaviour
         return spawnedEnemy;
     }
 
+    // retorna a lista atual de inimigos ativos na fase
+    public List<EnemyController> GetEnemies() => enemies;
+
+    // retorna o objeto jogador instanciado
+    public GameObject GetPlayerObject() => player;
+
     //metodo chamado na morte do inimigo para chamar a verificar o estado da onda
     private void OnEnemyDied(Health health)
     {
