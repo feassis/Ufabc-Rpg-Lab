@@ -17,8 +17,10 @@ MonoBehaviour:
   characterDisplay:
   - portrait: {fileID: 21300000, guid: 6d3985b33735841468a35808f7453d7b, type: 3}
     position: 0
+    isTalking: 0
   - portrait: {fileID: 21300000, guid: 1cf2c4018ee0ff54c9e1986ac397e92e, type: 3}
     position: 2
+    isTalking: 1
   backgroundSprite: {fileID: 21300000, guid: b7b0706cd9f5c2a4db148bafdb3632b1, type: 3}
   audioClip: {fileID: 0}
   ehAnimacao: 0

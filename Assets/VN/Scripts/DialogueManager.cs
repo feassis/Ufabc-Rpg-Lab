@@ -21,6 +21,10 @@ public class DialogueManager : MonoBehaviour
     private List <string> historyLog =  new List<string>();
     private Coroutine typeWriterCoroutine;
 
+    [Header("Configurações de Destaque")]
+    public Color corAtiva = Color.white;
+    public Color coloreInativa = new Color(0.5f, 0.5f, 0.5f, 1f);
+
     //Funcao para exibir personagens, background e dialogo na tela, de acordo com os dados do ScriptableObject
     public void DisplayDialogue(DialogueData data)
     {
@@ -61,6 +65,16 @@ public class DialogueManager : MonoBehaviour
             
             slot.sprite = pData.portrait;
             slot.gameObject.SetActive(true);
+
+            if (pData.isTalking)
+            {
+                slot.color = corAtiva;
+                slot.transform.SetAsLastSibling(); // Garante que o retrato do personagem que está falando fique em destaque
+            }
+            else
+            {
+                slot.color = coloreInativa;
+            }
 
             RectTransform rt = slot.GetComponent<RectTransform>();
             ConfigurarPosicao(rt, pData.position);
