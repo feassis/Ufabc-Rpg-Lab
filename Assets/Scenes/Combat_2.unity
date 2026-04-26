@@ -15037,9 +15037,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1949467866247592099}
     - target: {fileID: 8453293966923036977, guid: e860e6948e0a3b9419575cd5e0d272ba, type: 3}
+      propertyPath: skillsToAdd.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453293966923036977, guid: e860e6948e0a3b9419575cd5e0d272ba, type: 3}
       propertyPath: playerPowerUpController
       value: 
       objectReference: {fileID: 1949467866247592096}
+    - target: {fileID: 8453293966923036977, guid: e860e6948e0a3b9419575cd5e0d272ba, type: 3}
+      propertyPath: 'skillsToAdd.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8918772760569502080, guid: e860e6948e0a3b9419575cd5e0d272ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

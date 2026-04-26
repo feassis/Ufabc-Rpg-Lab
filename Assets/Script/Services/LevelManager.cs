@@ -11,6 +11,7 @@ public partial class LevelManager : MonoBehaviour
     [Header("Configs")]
     [SerializeField] private LevelData Data;
     [SerializeField] private Transform enemyHolder;
+    [SerializeField] private List<SkillType> skillsToAdd;
     
     [Header("Wave UI")]
     [SerializeField] private GameObject startWavesPanel;
@@ -220,7 +221,6 @@ public partial class LevelManager : MonoBehaviour
 
         player.GetComponent<Health>().OnDied += Player_OnDied;
 
-        AddSkillToPlayer(SkillType.GnarBoomerang);
         if (playerExperience != null)
         {
             playerExperience.OnLevelUp += PlayerExperience_OnLevelUp;
@@ -230,7 +230,10 @@ public partial class LevelManager : MonoBehaviour
             Debug.LogWarning("LevelManager precisa de uma referencia para PlayerExperience.");
         }
 
-        AddSkillToPlayer(SkillType.Boomereng);
+        foreach (var skills in skillsToAdd)
+        {
+            AddSkillToPlayer(skills);
+        }
     }
 
     private void ResolvePlayerReferences()

@@ -41,3 +41,5 @@ MonoBehaviour:
       Enemy: {fileID: -1984645112125697872, guid: 97f6605ff13b0df4492e043f51898dde, type: 3}
     - Points: 1
       Enemy: {fileID: 3469848046154557856, guid: 6d46e181a24554747aa873fa45375edc, type: 3}
+    - Points: 1
+      Enemy: {fileID: -1984645112125697872, guid: daced27b46a293a4e9294cb89a4771c2, type: 3}
