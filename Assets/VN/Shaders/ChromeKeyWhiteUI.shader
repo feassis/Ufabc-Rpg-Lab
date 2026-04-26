@@ -75,24 +75,20 @@ Shader "Custom/ChromaKeyWhiteUI"
 
             fixed4 frag(v2f IN) : SV_Target
             {
-                // Pega a cor do pixel da imagem (com o fundo branco)
-                fixed4 col = (tex2D(_MainTex, IN.texcoord) + _TextureSampleAdd) * IN.color;
+                // 1. Pega a cor PURA da imagem (onde o branco ainda é branco)
+                fixed4 tex = (tex2D(_MainTex, IN.texcoord) + _TextureSampleAdd);
                 
-                // --- LÓGICA DO CHROMA KEY ---
-                // Calcula a "distância" (diferença) entre a cor do pixel e o branco
-                float d = distance(col.rgb, _KeyColor.rgb);
-                
-                // Cria uma máscara de Alpha (transparência) baseada na distância
-                // Se a distância for menor que o Range, o Alpha será 0 (transparente)
+                // 2. LÓGICA DO CHROMA KEY (Calcula a máscara na cor original)
+                float d = distance(tex.rgb, _KeyColor.rgb);
                 float alphaMask = smoothstep(_Range, _Range + _Fuzziness, d);
                 
-                // Aplica a máscara ao Alpha original da imagem
+                // 3. Agora aplica o Tint do Unity (o cinza ou branco) e a transparência
+                fixed4 col = tex * IN.color;
                 col.a *= alphaMask;
-
-                // Suporte para o sistema de clipping da UI (máscaras do Unity)
+                
+                // Suporte para o sistema de clipping da UI
                 col.a *= UnityGet2DClipping(IN.worldPosition.xy, _ClipRect);
                 
-                // Retorna o pixel final com a transparência aplicada
                 return col;
             }
             ENDCG
