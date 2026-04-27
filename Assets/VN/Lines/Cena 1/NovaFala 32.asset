@@ -14,12 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   characterName: ????
   dialogueText: "Relaxa, a gente j\xE1 deu um jeito no saco de pulgas marciano. Vai
-    ser f\xE1cil pegar ela.\n\nTODO: INSERIR SOM ABFADO DE R\xC1DIO"
+    ser f\xE1cil pegar ela."
   characterDisplay:
-  - portrait: {fileID: 21300000, guid: 41546e686a63db44295d8f3ac4c83e78, type: 3}
+  - portrait: {fileID: 21300000, guid: 305063af7bb10b94e91d32098f067c76, type: 3}
     position: 1
     isTalking: 1
-  backgroundSprite: {fileID: 21300000, guid: b7b0706cd9f5c2a4db148bafdb3632b1, type: 3}
+    name: ????
+  - portrait: {fileID: 21300000, guid: e827e75e219ad8d409de5bf89b09c4a2, type: 3}
+    position: 0
+    isTalking: 1
+    name: ????
+  backgroundSprite: {fileID: 21300000, guid: aa19ae92b1180564489ee3b0b09f03dd, type: 3}
   audioClip: {fileID: 0}
   ehAnimacao: 0
   finalDeAnimacao: 0

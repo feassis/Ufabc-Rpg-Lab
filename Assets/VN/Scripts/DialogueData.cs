@@ -10,6 +10,7 @@ public class CharacterDisplay
     public Sprite portrait;
     public CharacterPosition position;
     public bool isTalking;
+    public string name;
 }
 
 //ScriptableObject para armazenar os dados de cada fala do diálogo

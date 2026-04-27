@@ -69,7 +69,11 @@ public class DialogueManager : MonoBehaviour
             if (pData.isTalking)
             {
                 slot.color = corAtiva;
-                slot.transform.SetAsLastSibling(); // Garante que o retrato do personagem que está falando fique em destaque
+
+                //Atualiza o nome do personagem que está falando
+                nameText.text = pData.name;
+                data.characterName = pData.name;
+                //slot.transform.SetAsLastSibling(); // Garante que o retrato do personagem que está falando fique em destaque
             }
             else
             {
@@ -118,7 +122,7 @@ public class DialogueManager : MonoBehaviour
         Vector2 anchor = Vector2.zero;
         switch(pos)
         {
-            case CharacterPosition.Esquerda: anchor = new Vector2(0.2f, 0.5f); break;
+            case CharacterPosition.Esquerda: anchor = new Vector2(0.2f, 0.42f); break;
             case CharacterPosition.Centro:   anchor = new Vector2(0.5f, 0.5f); break;
             case CharacterPosition.Direita:  anchor = new Vector2(0.8f, 0.5f); break;
         }
