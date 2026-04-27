@@ -9,6 +9,7 @@ public class EnemyMinibossSpawnerController : DartThrowerEnemy
     [SerializeField] private float spawnDistance;
     [SerializeField] private int maxNumberOfEnemiesSpawned = 15;
     [SerializeField] private int enemyNumToSpawnPerCicle = 3;
+    [SerializeField] private AudioSource whistleSound;
 
     private float nextSpawnTime;
     private List<EnemyController> minions = new List<EnemyController>();
@@ -42,6 +43,8 @@ public class EnemyMinibossSpawnerController : DartThrowerEnemy
         {
             return;
         }
+
+        whistleSound.Play();
 
         var minion = levelManager.SpawnEnemy(enemyPrefabs.GetRandomEntry<EnemyController>(), transform.position + new Vector3(Random.Range(0f, spawnDistance), Random.Range(0f, spawnDistance), 0));
 

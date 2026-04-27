@@ -4,6 +4,7 @@ using UnityEngine;
 //classe do inimigo melee
 public class MeleeEnemy : EnemyController
 {
+    [SerializeField] private AudioSource audioSource;
     private MeeleStateMachine stateMachine;
 
     protected override void Awake()
@@ -18,7 +19,7 @@ public class MeleeEnemy : EnemyController
         stateMachine.ChangeState(StatePattern.StateMachine.States.CHASING);
     }
 
-    private void Update()
+    protected override void Update()
     {
         base.Update();
         stateMachine.Update();
@@ -28,6 +29,10 @@ public class MeleeEnemy : EnemyController
         //muda para o estado de ataque caso esteja no range
         if (inAttackRange && stateMachine.currentState is not AttackingState)
         {
+            if(audioSource != null)
+            {
+                audioSource.Play();
+            }
             stateMachine.ChangeState(States.ATTACKING);
             return;
         }

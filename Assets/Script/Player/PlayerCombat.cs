@@ -15,6 +15,7 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private PlayerTriggerColision enemyDetection;
     [SerializeField] private GameObject biteVisuals;
     [SerializeField] private Stats stats;
+    [SerializeField] private AudioSource barkSounds;
 
     [Header("Special Setup")]
     [SerializeField] private LayerMask enemyLayer;
@@ -87,6 +88,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if( Mathf.Max(attackCooldownTimer, attackTimer) <= 0 )
         {
+            barkSounds.Play();
             attackTimer = GetAttackDuration();
             attackCooldownTimer = GetAttackCooldown();
             enemiesAttacked.Clear();
