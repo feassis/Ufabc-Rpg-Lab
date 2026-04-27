@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d58c2e1a29f8dab44869ac6ca63ff6c0, type: 3}
+  m_Name: Cena3_ 9
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  characterName: Narrador
+  dialogueText: "Continua no pr\xF3ximo epis\xF3dio\u2026"
+  characterDisplay: []
+  backgroundSprite: {fileID: 21300000, guid: be763c01b4217fe46958781b7594a878, type: 3}
+  audioClip: {fileID: 0}
+  ehAnimacao: 0
+  finalDeAnimacao: 0
+  tempoExibicao: 0.2

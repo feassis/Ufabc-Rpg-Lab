@@ -15,13 +15,15 @@ MonoBehaviour:
   characterName: "Pa\xE7oca"
   dialogueText: "Certo, ent\xE3o\u2026 o que faremos?"
   characterDisplay:
-  - portrait: {fileID: 21300000, guid: 6d3985b33735841468a35808f7453d7b, type: 3}
-    position: 0
+  - portrait: {fileID: 21300000, guid: 305063af7bb10b94e91d32098f067c76, type: 3}
+    position: 1
     isTalking: 1
-  - portrait: {fileID: 21300000, guid: 1cf2c4018ee0ff54c9e1986ac397e92e, type: 3}
-    position: 2
+    name: "Pa\xE7oca"
+  - portrait: {fileID: 21300000, guid: 9bf341edc714e8d408eafd0f1e27a09b, type: 3}
+    position: 0
     isTalking: 0
-  backgroundSprite: {fileID: 21300000, guid: b7b0706cd9f5c2a4db148bafdb3632b1, type: 3}
+    name: Sombra
+  backgroundSprite: {fileID: 21300000, guid: aa19ae92b1180564489ee3b0b09f03dd, type: 3}
   audioClip: {fileID: 0}
   ehAnimacao: 0
   finalDeAnimacao: 0

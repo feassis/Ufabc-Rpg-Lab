@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d58c2e1a29f8dab44869ac6ca63ff6c0, type: 3}
+  m_Name: Cena2_0 22
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  characterName: Sombra
+  dialogueText: "Pa\xE7oca, \xE9 aquele controle nas m\xE3os dela. \xC9 ele que t\xE1
+    enviando sinal pro emissor de radia\xE7\xE3o!"
+  characterDisplay:
+  - portrait: {fileID: 21300000, guid: 1d15c63a83526de4398cc6fdbc56a156, type: 3}
+    position: 2
+    isTalking: 0
+    name: "Pa\xE7oca"
+  - portrait: {fileID: 21300000, guid: 7e4902b2dea2ece48b62ce8d8f4592c0, type: 3}
+    position: 1
+    isTalking: 1
+    name: Sombra
+  - portrait: {fileID: 21300000, guid: 3c28bdcf2511ce447ba2e4f037818098, type: 3}
+    position: 0
+    isTalking: 0
+    name: ???
+  backgroundSprite: {fileID: 21300000, guid: fdd3165315945a64183936f6826c387c, type: 3}
+  audioClip: {fileID: 0}
+  ehAnimacao: 0
+  finalDeAnimacao: 0
+  tempoExibicao: 0.2
