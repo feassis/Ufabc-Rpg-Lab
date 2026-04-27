@@ -7,6 +7,7 @@ public class DartThrowerEnemy : EnemyController
     [SerializeField] protected DartProjectile dartPrefab;
     [SerializeField] protected ProjectileData projectileData;
     [SerializeField] protected Transform throwPoint;
+    [SerializeField] protected AudioSource dartSound;
 
     private DartThrowerStateMachine stateMachine;
     protected float nextThrowTime;
@@ -68,6 +69,8 @@ public class DartThrowerEnemy : EnemyController
         {
             return;
         }
+
+        dartSound.Play();
 
         Vector3 origin = throwPoint != null ? throwPoint.position : transform.position;
         Vector2 direction = (player.transform.position - origin).normalized;
