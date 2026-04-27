@@ -65,7 +65,7 @@ public class VisualNovelController : MonoBehaviour
         {
             tempoParaAvancar = float.MaxValue;
         }
-        Debug.Log("Tempo para avançar: " + tempoParaAvancar + "Esse é o tempo por caracter: " + tempoPorCaractere + "esse é o numero de caracteres: " + comprimentoReal);
+        //Debug.Log("Tempo para avançar: " + tempoParaAvancar + "Esse é o tempo por caracter: " + tempoPorCaractere + "esse é o numero de caracteres: " + comprimentoReal);
         //Avança automaticamente se o timer atingir o tempo necessário
         if (timerAuto >= tempoParaAvancar)
         {
