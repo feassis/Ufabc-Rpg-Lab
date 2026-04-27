@@ -2622,13 +2622,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 4636984414525177450}
     m_Modifications:
     - target: {fileID: -7871556540511652807, guid: 906f8709ae1bf6a4bb13188a9f8f2d2e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: 2c9a39fc8da78644a87aee310fa26c3f, type: 3}
+    - target: {fileID: -7871556540511652807, guid: 906f8709ae1bf6a4bb13188a9f8f2d2e, type: 3}
       propertyPath: m_SortingOrder
       value: -20
       objectReference: {fileID: 0}
     - target: {fileID: -7871556540511652807, guid: 906f8709ae1bf6a4bb13188a9f8f2d2e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2ef071267dd26b642868763bb469f33f, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: -3888481672020999207, guid: 906f8709ae1bf6a4bb13188a9f8f2d2e, type: 3}
       propertyPath: m_Name
       value: maquiseVeganaFloor
