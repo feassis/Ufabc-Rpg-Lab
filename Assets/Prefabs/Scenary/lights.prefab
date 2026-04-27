@@ -131,7 +131,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.8}
+  m_Offset: {x: 0, y: -1.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -141,7 +141,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.3}
+  m_Size: {x: 0.5, y: 0.3}
   m_EdgeRadius: 0
 --- !u!1 &8039930405822111369
 GameObject:
@@ -225,7 +225,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1197191119, guid: aef3b42c51d4ee441b4c779129f791dd, type: 3}
+  m_Sprite: {fileID: 89589536, guid: e119e087e6a7d3845bd14295cff384e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -248,12 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandomizeSprite
   treeSprites:
-  - {fileID: -390989681, guid: aef3b42c51d4ee441b4c779129f791dd, type: 3}
-  - {fileID: -1335856687, guid: aef3b42c51d4ee441b4c779129f791dd, type: 3}
-  - {fileID: -823598187, guid: aef3b42c51d4ee441b4c779129f791dd, type: 3}
-  - {fileID: 1731022175, guid: aef3b42c51d4ee441b4c779129f791dd, type: 3}
-  - {fileID: -1677223646, guid: aef3b42c51d4ee441b4c779129f791dd, type: 3}
-  - {fileID: 1197191119, guid: aef3b42c51d4ee441b4c779129f791dd, type: 3}
+  - {fileID: 444459875, guid: e119e087e6a7d3845bd14295cff384e2, type: 3}
+  - {fileID: 89589536, guid: e119e087e6a7d3845bd14295cff384e2, type: 3}
 --- !u!1 &8193457948427471130
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 398339470524864725}
   m_Layer: 0
-  m_Name: GreenTreeGroundedPrefab
+  m_Name: lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
