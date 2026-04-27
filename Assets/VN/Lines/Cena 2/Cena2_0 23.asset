@@ -20,7 +20,7 @@ MonoBehaviour:
     position: 2
     isTalking: 1
     name: "Pa\xE7oca"
-  - portrait: {fileID: 21300000, guid: 499bdb47d603c674c9bf67f6d34ed671, type: 3}
+  - portrait: {fileID: 21300000, guid: 3c28bdcf2511ce447ba2e4f037818098, type: 3}
     position: 0
     isTalking: 0
     name: ???

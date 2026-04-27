@@ -16,7 +16,7 @@ MonoBehaviour:
   dialogueText: "Voc\xEA n\xE3o vai escapar de mim, Pa\xE7oca! Eu vou voltar! EU
     VOU VOLTAR!"
   characterDisplay:
-  - portrait: {fileID: 21300000, guid: ba541252d3cd72c468986c30592c288e, type: 3}
+  - portrait: {fileID: 21300000, guid: c536b8ff90faf1342bba8e2fb00a165d, type: 3}
     position: 2
     isTalking: 0
     name: "Pa\xE7oca"
