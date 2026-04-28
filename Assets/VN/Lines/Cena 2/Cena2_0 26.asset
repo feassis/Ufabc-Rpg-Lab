@@ -24,7 +24,7 @@ MonoBehaviour:
     isTalking: 1
     name: ???
   backgroundSprite: {fileID: 21300000, guid: fdd3165315945a64183936f6826c387c, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 6c3247af23177dc4b8d6c6a4e8ba5a69, type: 3}
   ehAnimacao: 0
   finalDeAnimacao: 0
   tempoExibicao: 0.2

@@ -29,7 +29,7 @@ MonoBehaviour:
     isTalking: 0
     name: "Fa\xEDsca"
   backgroundSprite: {fileID: 21300000, guid: 9eba743f38eb7824091fea548c49fc91, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 52ecce912c97f594b81b65e6a138ac63, type: 3}
   ehAnimacao: 0
   finalDeAnimacao: 0
   tempoExibicao: 0.2

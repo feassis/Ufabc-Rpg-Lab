@@ -20,7 +20,7 @@ MonoBehaviour:
     isTalking: 1
     name: "Pa\xE7oca"
   backgroundSprite: {fileID: 21300000, guid: fdd3165315945a64183936f6826c387c, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: ae18a00ea883575499aac72fdd8254d1, type: 3}
   ehAnimacao: 0
   finalDeAnimacao: 0
   tempoExibicao: 0.2

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: NovaFala 21
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   characterName: Sombra
-  dialogueText: "(suspiro) Calma que piora\u2026 eles sabotaram sua nave com um n\xFAcleo
-    de radia\xE7\xE3o gama. E voc\xEA sabe o que isso significa\u2026"
+  dialogueText: "Calma que piora\u2026 eles sabotaram sua nave com um n\xFAcleo de
+    radia\xE7\xE3o gama. E voc\xEA sabe o que isso significa\u2026"
   characterDisplay:
   - portrait: {fileID: 21300000, guid: 305063af7bb10b94e91d32098f067c76, type: 3}
     position: 1

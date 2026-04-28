@@ -15,4 +15,4 @@ MonoBehaviour:
   titulo: Mordida
   instrucao: "Para fazer com que Pa\xE7oca morda os inimigos, pressione o bot\xE3o
     esquerdo do mouse."
-  videoExemplo: {fileID: 32900000, guid: a056dd461cf2c6b4eb300785a92275c6, type: 3}
+  videoExemplo: {fileID: 32900000, guid: ce6c186ab43f2e846a54dd258d77419b, type: 3}

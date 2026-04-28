@@ -25,7 +25,7 @@ MonoBehaviour:
     isTalking: 0
     name: Sombra
   backgroundSprite: {fileID: 21300000, guid: aa19ae92b1180564489ee3b0b09f03dd, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: bdb17b0b6602d0846b9ae52aecbf7b86, type: 3}
   ehAnimacao: 0
   finalDeAnimacao: 0
   tempoExibicao: 0.2
