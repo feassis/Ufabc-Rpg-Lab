@@ -692,7 +692,7 @@ MonoBehaviour:
   velocidadeDigitacao: 0.03
   isTyping: 0
   corAtiva: {r: 1, g: 1, b: 1, a: 1}
-  coloreInativa: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  coloreInativa: {r: 0.8037735, g: 0.8037735, b: 0.8037735, a: 1}
 --- !u!4 &142502507
 Transform:
   m_ObjectHideFlags: 0
@@ -1340,7 +1340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -52.69995, y: -36.899994}
+  m_AnchoredPosition: {x: -52.699707, y: -36.899902}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &392161719
