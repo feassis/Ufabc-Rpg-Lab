@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   characterName: Sombra
   dialogueText: "Vai com calma, Douradinha. A Pol\xEDcia t\xE1 armada at\xE9 os dentes
-    l\xE1 fora. Do jeito que voc\xEA t\xE1\u2026"
+    l\xE1 fora. E n\xE3o sabemos como a radia\xE7\xE3o vai afetar eles, talvez eles
+    apare\xE7am com superfor\xE7a ou com um bra\xE7o faltando... "
   characterDisplay:
   - portrait: {fileID: 21300000, guid: 305063af7bb10b94e91d32098f067c76, type: 3}
     position: 1
