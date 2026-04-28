@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NovaFala 8
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   characterName: Sombra
-  dialogueText: "(suspiro) Bom\u2026 senta que l\xE1 vem hist\xF3ria\u2026"
+  dialogueText: "Bom\u2026 senta que l\xE1 vem hist\xF3ria\u2026"
   characterDisplay:
   - portrait: {fileID: 21300000, guid: 3d9895213d4a1a84c9e7802eb02f944c, type: 3}
     position: 1
