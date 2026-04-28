@@ -15,4 +15,4 @@ MonoBehaviour:
   titulo: "Evolu\xE7\xF5es"
   instrucao: "Ao upar de n\xEDvel, ser\xE3o mostradas 3 op\xE7\xF5es de upgrade para
     Pa\xE7oca. Escolha uma para prosseguir."
-  videoExemplo: {fileID: 32900000, guid: da647b4e023f8ac4babedb9df3cc22da, type: 3}
+  videoExemplo: {fileID: 32900000, guid: 12657bf42212ebc4b83e131a5ce869eb, type: 3}
