@@ -102,7 +102,7 @@ public partial class LevelManager : MonoBehaviour
 
             var point = spawnPoint.GetRandomizedSpawnPoint();
 
-            SpawnEnemy(enemy.Enemy, new Vector3(point.x, point.y, 0f) + player.transform.position);
+            SpawnEnemy(enemy.Enemy, new Vector3(point.x, point.y, 0f));
 
             pointsSpawned += enemy.Points;
 
@@ -124,7 +124,7 @@ public partial class LevelManager : MonoBehaviour
 
             var point = spawnPoint.GetRandomizedSpawnPoint();
 
-            StartCoroutine(SpawnEnemyWithDelay(enemy.SpawnTime, enemy.Enemy, new Vector3(point.x, point.y, 0f) + player.transform.position, () =>
+            StartCoroutine(SpawnEnemyWithDelay(enemy.SpawnTime, enemy.Enemy, new Vector3(point.x, point.y, 0f), () =>
             {
                 fixedEnemiesSpawned++;
             }));

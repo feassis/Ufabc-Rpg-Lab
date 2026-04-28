@@ -262,8 +262,8 @@ MonoBehaviour:
   throwPoint: {fileID: 4064312843606985267}
   dartSound: {fileID: 2563789449976444987}
   enemyPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -1984645112125697872, guid: 3ccc93fe94365bb4384f6d295f8b5f27, type: 3}
+  - {fileID: -1984645112125697872, guid: 86484fe9f6122474ea1ca488ea28c51e, type: 3}
   spawnDistance: 4
   maxNumberOfEnemiesSpawned: 15
   enemyNumToSpawnPerCicle: 3

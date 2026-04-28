@@ -20,16 +20,28 @@ MonoBehaviour:
   EnemySpawnPoints:
   - X: 10
     Y: 10
-    RandownRange: 2
+    RandownRange: 4
   - X: -10
     Y: 10
-    RandownRange: 2
+    RandownRange: 4
   - X: 10
     Y: -10
-    RandownRange: 2
+    RandownRange: 4
   - X: -10
     Y: -10
-    RandownRange: 2
+    RandownRange: 4
+  - X: -20
+    Y: -10
+    RandownRange: 4
+  - X: 10
+    Y: -20
+    RandownRange: 4
+  - X: -15
+    Y: 10
+    RandownRange: 4
+  - X: 15
+    Y: -10
+    RandownRange: 4
   Waves:
   - StartUpTimer: 2
     MinCoolDownBetweenEnemies: 1
