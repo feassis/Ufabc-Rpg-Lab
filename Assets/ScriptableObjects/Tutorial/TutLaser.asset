@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TutLaser
   m_EditorClassIdentifier: Assembly-CSharp::TutorialStep
   titulo: Laser
-  instrucao: "Para fazer com que Pa\xE7oca sole laser pelos olhos, pressione o bot\xE3o
+  instrucao: "Para fazer com que Pa\xE7oca solte laser pelos olhos, pressione o bot\xE3o
     direito do mouse, utilizando o ponteiro do mouse parar mirar."
   videoExemplo: {fileID: 32900000, guid: 1712edf13a3dcc042991109a51a17011, type: 3}

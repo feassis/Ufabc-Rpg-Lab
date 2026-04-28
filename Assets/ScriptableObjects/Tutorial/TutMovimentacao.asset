@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TutorialStep
   titulo: Movimentacao
   instrucao: "Para se movimentar Pa\xE7oca, utilize as teclas WASD."
-  videoExemplo: {fileID: 32900000, guid: ce6c186ab43f2e846a54dd258d77419b, type: 3}
+  videoExemplo: {fileID: 32900000, guid: 91d4d9f929dd6d34a9c5a8bf1692d681, type: 3}
