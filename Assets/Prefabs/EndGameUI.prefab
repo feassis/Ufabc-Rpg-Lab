@@ -191,8 +191,8 @@ MonoBehaviour:
   playAgainButton: {fileID: 8915588009723728546}
   nextLevelButton: {fileID: 1479968487619116315}
   messageText: {fileID: 6809155097807935861}
-  defeatMessage: You were captured!!
-  winMessage: You were won!!
+  defeatMessage: Foi Capturado!!
+  winMessage: "Voc\xEA Ganhou!!"
   nextLevelName: Cutscene_02
 --- !u!1 &1960646929958468009
 GameObject:
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Try Again
+  m_text: Tentar Denovo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next Level
+  m_text: "Prox\xEDmo Nivel"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

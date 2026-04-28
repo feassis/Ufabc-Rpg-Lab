@@ -68,7 +68,7 @@ public partial class LevelManager : MonoBehaviour
         var startUpIn = wave.StartUpTimer;
 
         startWavesPanel.SetActive(true);
-        startWavesText.text = $"Starts in: {startUpIn}s";
+        startWavesText.text = $"Começa em: {startUpIn}s";
 
         while(startUpIn > 0)
         {
@@ -77,7 +77,7 @@ public partial class LevelManager : MonoBehaviour
             startUpIn -= 1f;
 
 
-            startWavesText.text = $"Starts in: {startUpIn}s";
+            startWavesText.text = $"Começa em: {startUpIn}s";
         }
 
         startWavesPanel.SetActive(false);
