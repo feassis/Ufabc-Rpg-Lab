@@ -5349,27 +5349,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 804897858800870489, guid: ba6ab95de04a78049831391093708838, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 804897858800870489, guid: ba6ab95de04a78049831391093708838, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 804897858800870489, guid: ba6ab95de04a78049831391093708838, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 804897858800870489, guid: ba6ab95de04a78049831391093708838, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 804897858800870489, guid: ba6ab95de04a78049831391093708838, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 804897858800870489, guid: ba6ab95de04a78049831391093708838, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 804897858800870489, guid: ba6ab95de04a78049831391093708838, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5401,11 +5401,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 804897858800870489, guid: ba6ab95de04a78049831391093708838, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -966.5949
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 804897858800870489, guid: ba6ab95de04a78049831391093708838, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -522.08215
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 804897858800870489, guid: ba6ab95de04a78049831391093708838, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5431,6 +5431,10 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 4960284190094708357}
+    - target: {fileID: 8278181607319514214, guid: ba6ab95de04a78049831391093708838, type: 3}
+      propertyPath: radiusFraction
+      value: 0.12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
