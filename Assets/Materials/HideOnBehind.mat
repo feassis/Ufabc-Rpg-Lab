@@ -50,7 +50,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _PlayerPos: {r: -20.290403, g: 40.082714, b: 0.6, a: 0}
+    - _PlayerPos: {r: -1.3462791, g: 27.62264, b: 0.6, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

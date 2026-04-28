@@ -16,5 +16,6 @@ MonoBehaviour:
   DashSpeed: 0
   AttackRange: 8
   AttackDamage: 5
-  AttackCooldown: 1.5
+  AttackCooldown: 3
   AbilityCooldown: 10
+  ExperienceReward: 10
